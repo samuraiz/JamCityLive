@@ -39,9 +39,10 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 # Use devise for authentication
 gem 'devise'
-# gem 'omniauth'
-# gem 'omniauth-google-oauth2'
-# gem 'omniauth-openid'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-openid'
 # Use rspec for testing
 gem 'rspec'
 gem 'rspec-rails'
