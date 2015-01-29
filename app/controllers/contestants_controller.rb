@@ -1,7 +1,18 @@
 class ContestantsController < ApplicationController
   before_action :set_contestant, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :is_admin?, only: [:create, :edit, :update, :destroy]
 
   respond_to :html
+
+
+  def is_admin?
+    if current_user.admin?
+      true
+    else
+      redirect_to root_path
+    end
+  end
 
   def index
     @contestants = Contestant.all
