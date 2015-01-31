@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 
 # Use carrierwave for image uploads
 gem 'carrierwave'
+gem 'mini_magick'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 # Use devise for authentication
