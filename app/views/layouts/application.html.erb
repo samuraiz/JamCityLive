@@ -1,14 +1,145 @@
 <!DOCTYPE html>
-<html>
+<!-- header -->
+<html lang="en">
+
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
+  <%= stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
   <%= csrf_meta_tags %>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
+
 <body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Brand</a>
+      </div>
 
-<%= yield %>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Link</a>
+          </li>
+          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Link</a>
+          </li>
+          <li class="dropdown">
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Action</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Another action</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Something else here</a>
+              </li>
+              <li class="divider"></li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Separated link</a>
+              </li>
+              <li class="divider"></li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">One more separated link</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Link</a>
+          </li>
+          <li class="dropdown">
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Action</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Another action</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Something else here</a>
+              </li>
+              <li class="divider"></li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Separated link</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- header end -->
 
+  <!-- body content -->
+  <%= yield %>
+    <!-- body content end -->
+
+
+    <!-- footer -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <em>©copyright 2014 all rights reserved</em>
+        </div>
+        <div class="col-md-6">
+          <p class="text-right">
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Facebook.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Twitter.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Google+.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Pinterest.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Linkedin.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Myspace.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Dribbble.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Youtube.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Flickr.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%= image_tag( "social/Tumblr.png") %>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <%= javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
+    <!-- Latest compiled and minified JavaScript -->
+    <%= javascript_include_tag( 'bootstrap.min', 'data-turbolinks-track'=> true) %>
+    <%= javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
 </body>
+
 </html>
+<!-- footer end -->
