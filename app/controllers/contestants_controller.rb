@@ -7,11 +7,7 @@ class ContestantsController < ApplicationController
 
 
   def is_admin?
-    if current_user.admin?
-      true
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin?
   end
 
   def index

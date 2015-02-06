@@ -1,20 +1,24 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:destroy]
+  before_action :is_admin?, only: [:destroy]
+
 
   respond_to :html
 
+  def is_admin?
+    redirect_to root_path unless current_user.admin?
+  end
+
   def index
     @posts = Post.all
-    respond_with(@posts)
   end
 
   def show
-    respond_with(@post)
   end
 
   def new
     @post = Post.new
-    respond_with(@post)
   end
 
   def edit
@@ -23,17 +27,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    respond_with(@post)
   end
 
   def update
     @post.update(post_params)
-    respond_with(@post)
   end
 
   def destroy
     @post.destroy
-    respond_with(@post)
   end
 
   private
