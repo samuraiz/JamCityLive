@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'homes#show'
 
   resources :contestants
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   resources :posts
 
   resources :media
+
+  resource :dashboard
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

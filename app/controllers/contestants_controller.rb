@@ -16,16 +16,13 @@ class ContestantsController < ApplicationController
 
   def index
     @contestants = Contestant.all
-    respond_with(@contestants)
   end
 
   def show
-    respond_with(@contestant)
   end
 
   def new
     @contestant = Contestant.new
-    respond_with(@contestant)
   end
 
   def edit
@@ -34,17 +31,14 @@ class ContestantsController < ApplicationController
   def create
     @contestant = Contestant.new(contestant_params)
     @contestant.save
-    respond_with(@contestant)
   end
 
   def update
     @contestant.update(contestant_params)
-    respond_with(@contestant)
   end
 
   def destroy
     @contestant.destroy
-    respond_with(@contestant)
   end
 
   private
