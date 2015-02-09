@@ -27,14 +27,17 @@ class ContestantsController < ApplicationController
   def create
     @contestant = Contestant.new(contestant_params)
     @contestant.save
+    redirect_to contestants_path
   end
 
   def update
     @contestant.update(contestant_params)
+    redirect_to contestants_path
   end
 
   def destroy
     @contestant.destroy
+    redirect_to contestants_path
   end
 
   private
