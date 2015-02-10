@@ -43,9 +43,12 @@ gem 'mini_magick'
 # Use devise for authentication
 gem 'devise'
 gem 'omniauth'
+gem "omniauth-google-oauth2"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Use rspec for testing
 gem 'rspec'
 gem 'rspec-rails'
