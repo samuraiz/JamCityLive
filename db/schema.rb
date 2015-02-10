@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20150210150622) do
     t.string   "name"
     t.text     "bio"
     t.string   "nickname"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "likes", force: true do |t|
