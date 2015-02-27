@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery.modal
-//= require_tree .
+//= require jquery.easing
+//= require jquery_ujs
+//= require turbolinks
+// require_tree
+
+setTimeout(function(){
+  jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
+    
+  });
+  jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
+}, 1000);

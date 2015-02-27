@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_tree .
+ * require_self
+ */ 
+
+ /*@import style from google fonts*/
+ @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+body {
+  background-image: url(image-path('bg.jpg'));
+  background-size: contain;
+  background-color: rgb(0,0,0);
+  background-repeat: no-repeat;
+  background-position: 50% -8%;
+  color: white;
+  font-family: "Open Sans";
+  line-height: 1.8em;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Averia Serif Libre";
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-color: rgb(20,20,20);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-default {
+  /*@include experimental('background', linear-gradient(bottom, rgba(0,0,0,0.3), rgba(0,0,255,0.6)), webkit, moz, o, ms, not khtml);*/
+  background: -webkit-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
+  background: -moz-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
+  background: -o-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
+  background: linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
+  padding: 0px;
+    .container {
+      margin-top:0px;
+    }
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #999;
+    background-color: transparent;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: rgba(0,0,255,0.7) !important;
+}
+
+.navbar-nav > li > a, .navbar-nav > li > a:focus , .navbar-nav > li > a:active {
+    color: white !important;
+}
+
+.container > .row {
+  padding: 50px 0;
+}
+
+
+/*Slide Elements*/
+.slide-element {
+  float: right;
+  position: relative;
+  margin-top: 300px;
+  margin-right: 100px;
+  h1 {
+    font-size: 90px;
+    font-family: "Averia Serif Libre";
+    position: relative;
+    &.top_text {
+      left: 1000px;
+    }
+    &.bottom_text {
+      left: -2000px;
+    }
+  }
+}
+
+// Container
+.container {
+  margin-top: 20px;
+}
+
+.content-container {
+  background-color: rgba(50,50,50,.5);
+  margin-left: auto; 
+  margin-right: auto; 
+  float: none;
+  clear: left;
+}
+
+.featured-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  h3 {
+    padding: 10px 0px 10px 12px;
+  }
+}
+
+// Sidebar Elements
+.blocks {
+  margin: 40px 0;
+  span {
+    background-color: rgb(20,50,155);
+  }
+}
+
+
+// column styles
+.column-title {
+  font-family: "Averia Serif Libre";
+  font-size: 43px;
+  margin-left: 20px;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(200,200,250,.7);
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
+  background: -o-linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
+  background: linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
+}
+
+// Content Title

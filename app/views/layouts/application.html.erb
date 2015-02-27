@@ -8,15 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
-  <%= stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
-  <%= stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
-  <%= csrf_meta_tags %>
-  <%= javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
+  <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
+    <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
+      <%=csrf_meta_tags %>
 
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
@@ -39,33 +37,44 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Home</a>
+          <li class="dropdown">
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">What is Jam City</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Aims and Objectives</a>
+              </li>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Benefits</a>
+              </li>
+            </ul>
           </li>
           <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Photo Gallery</a>
           </li>
+          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Jam City TV</a>
+          </li>
+          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Events</a>
+          </li>
           <li class="dropdown">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Videos <b class="caret"></b></a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Affiliates <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Action</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Institutions</a>
               </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Another action</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Sponsors</a>
               </li>
               <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Something else here</a>
               </li>
               <li class="divider"></li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Separated link</a>
-              </li>
-              <li class="divider"></li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">One more separated link</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Become a Sponsor</a>
               </li>
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
+        <!--  <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        </form> -->
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
               <strong><%= current_user.name %></strong>.
@@ -81,16 +90,14 @@
           <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">About</a>
           </li>
           <li class="dropdown">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Institution & Affiliates <b class="caret"></b></a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Action</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Admin Dashboard</a>
               </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Another action</a>
-              </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Something else here</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Edit Profile</a>
               </li>
               <li class="divider"></li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Separated link</a>
+              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Logout</a>
               </li>
             </ul>
           </li>
@@ -101,7 +108,7 @@
   <!-- header end -->
 
   <!-- body content -->
-  <%= yield %>
+  <%=yield %>
     <!-- body content end -->
 
 
@@ -114,23 +121,26 @@
         <div class="col-md-6">
           <p class="text-right">
             <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%= image_tag( "social/Facebook.png") %>
+              <%=image_tag( "social/Facebook.png") %>
             </a>
             <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%= image_tag( "social/Twitter.png") %>
+              <%=image_tag( "social/Twitter.png") %>
             </a>
             <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%= image_tag( "social/Google+.png") %>
+              <%=image_tag( "social/Google+.png") %>
+            </a>
+            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
+              <%=image_tag( "social/Youtube.png") %>
             </a>
           </p>
         </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <%= javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
-    <!-- Latest compiled and minified JavaScript -->
-    <%= javascript_include_tag( 'bootstrap.min', 'data-turbolinks-track'=> true) %>
-    <%= javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
+    <%=javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
+      <!-- Latest compiled and minified JavaScript -->
+      <%=javascript_include_tag( 'bootstrap.min', 'data-turbolinks-track'=> true) %>
+        <%=javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
 </body>
 
 </html>
