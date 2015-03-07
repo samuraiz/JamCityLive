@@ -58,4 +58,5 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Use rspec for testing
 gem 'rspec'
 gem 'rspec-rails'
+gem 'rails_12factor', group: :production
 
