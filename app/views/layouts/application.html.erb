@@ -31,40 +31,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">JAM CITY</a>
+        <%= link_to "JAM CITY", root_path, class: 'navbar-brand' %>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Home</a>
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Participants", contestants_path %></li>
+          <li><a href="#">Photo Gallery</a></li>
+          <li><a href="#">Jam City TV</a></li>
+          <li><a href="#">Events</a></li>
           <li class="dropdown">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Affiliates <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">What is Jam City</a>
+              <li><a href="#">Institutions</a>
               </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Aims and Objectives</a>
+              <li><a href="#">Sponsors</a>
               </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Benefits</a>
-              </li>
-            </ul>
-          </li>
-          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Photo Gallery</a>
-          </li>
-          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Jam City TV</a>
-          </li>
-          <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Events</a>
-          </li>
-          <li class="dropdown">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">Affiliates <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Institutions</a>
-              </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Sponsors</a>
-              </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Something else here</a>
+              <li><a href="#">Something else here</a>
               </li>
               <li class="divider"></li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Become a Sponsor</a>
+              <li><a href="#">Become a Sponsor</a>
               </li>
             </ul>
           </li>
@@ -77,26 +64,27 @@
         </form> -->
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-              <strong><%= current_user.name %></strong>.
-              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><%= current_user.name %></strong><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Admin Dashboard</a>
+                  </li>
+                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
           <% else %>
-              <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-default" %>
-              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Connect</strong><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+                  <li><%= link_to "Login", new_user_session_path  %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Sign up", new_user_registration_path  %></li>
+                </ul>
+              </li>
           <% end %>
-          <li class="dropdown">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Admin Dashboard</a>
-              </li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Edit Profile</a>
-              </li>
-              <li class="divider"></li>
-              <li><a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">Logout</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
@@ -116,17 +104,17 @@
         </div>
         <div class="col-md-6">
           <p class="text-right">
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%=image_tag( "social/Facebook.png") %>
+            <a href="#">
+              <%=image_tag( "social/facebook.png") %>
             </a>
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%=image_tag( "social/Twitter.png") %>
+            <a href="#">
+              <%=image_tag( "social/twitter.png") %>
             </a>
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%=image_tag( "social/Google+.png") %>
+            <a href="#">
+              <%=image_tag( "social/googleplus.png") %>
             </a>
-            <a href="file:///Users/el-magnifico/Documents/jamcitylive/index.html#">
-              <%=image_tag( "social/Youtube.png") %>
+            <a href="#">
+              <%=image_tag( "social/youtube.png") %>
             </a>
           </p>
         </div>
