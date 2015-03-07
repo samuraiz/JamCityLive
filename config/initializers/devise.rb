@@ -21,7 +21,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
   require 'openid/store/filesystem'
-  config.omniauth :facebook, "648873945224239", "4f4cbfaedd36745626cbc40a188f6371"
+  config.omniauth :facebook, "721275387970991", "3844b78076699dfc663ac8d1210b0431"
 
 
   # ==> Configuration for any authentication mechanism
