@@ -224,9 +224,9 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-openid
   omniauth-twitter
-  pg
+  pg (= 0.18.1)
   rails (= 4.1.8)
-  rails_12factor
+  rails_12factor (= 0.0.3)
   rspec
   rspec-rails
   sass-rails (~> 4.0.3)
