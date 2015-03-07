@@ -1,0 +1,10 @@
+<% unless @contestant.users.include? current_user %>
+    <%= form_for Vote.new do |f| %>
+        <%= hidden_field(:vote, :contestant_id, value: @contestant.id )%>
+        <%= hidden_field(:vote, :user_id, value: current_user.id)%>
+        <div class="row actions text-center">
+          <%= f.submit "Vote", class: "btn btn-primary" %>
+        </div>
+        <br>
+    <% end %>
+<% end %>
