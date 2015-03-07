@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'pg'
 # Use jquery ui library
 gem 'jquery-ui-rails'
 gem 'jquery-easing-rails'
