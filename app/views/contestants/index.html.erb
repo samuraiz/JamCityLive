@@ -3,8 +3,25 @@
     <h3 class="page-header">Contestants</h3>
     <ul class="contestant-list">
       <% @contestants.each do |contestant| %>
+          <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="Contestant">
+            <div class="row">
+              <div class="modal-header">
+                <%= link_to 'Close', (contestant),{ class: "btn btn-primary pull-right", 'data-dismiss' => '#modal-window'} %>
+                <h3 class="modal-heading"><%= contestant.name %></h3>
+              </div>
+              <div class="col-md-6">
+                <%= image_tag contestant.image.url(:medium) %>
+              </div>
+              <div class="col-md-6">
+                <p><%= contestant.nickname  %></p>
+                <p><%= contestant.bio  %></p>
+                <h1><%= contestant.votes.count  %>&hearts;</h1>
+                <%= link_to 'Vote For This Contestant', (contestant) %><br>
+              </div>
+            </div>
+          </div>
           <li>
-            <%= link_to (contestant) do %>
+            <%= link_to (contestant), { 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %>
                 <div class="contestant">
                   <%= image_tag contestant.image.url(:thumb) %>
                   <div class="contestant-list-text">

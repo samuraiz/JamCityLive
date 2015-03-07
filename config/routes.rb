@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'homes#show'
 
   resources :contestants
+  resources :votes
 
   resources :posts
 

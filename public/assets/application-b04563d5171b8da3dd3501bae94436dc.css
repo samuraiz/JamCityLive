@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_tree .
+ * require_self
+ */
+/*@import style from google fonts*/
+@import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+/* line 22, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+body {
+  background-image: url("/assets/bg.jpg");
+  background-size: contain;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: 50% -8%;
+  color: white;
+  font-family: "Open Sans";
+  line-height: 1.8em;
+  font-weight: 300;
+}
+
+/* line 34, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "Averia Serif Libre";
+}
+
+/* line 38, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar {
+  margin-bottom: 0;
+  border-color: #141414;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+/* line 48, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar-default {
+  /*@include experimental('background', linear-gradient(bottom, rgba(0,0,0,0.3), rgba(0,0,255,0.6)), webkit, moz, o, ms, not khtml);*/
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 100, 0.5), rgba(0, 0, 255, 0.7));
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 100, 0.5), rgba(0, 0, 255, 0.7));
+  background: -o-linear-gradient(bottom, rgba(0, 0, 100, 0.5), rgba(0, 0, 255, 0.7));
+  background: linear-gradient(bottom, rgba(0, 0, 100, 0.5), rgba(0, 0, 255, 0.7));
+  padding: 0px;
+}
+/* line 55, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar-default .container {
+  margin-top: 0px;
+}
+
+/* line 60, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #999;
+  background-color: transparent;
+}
+
+/* line 65, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar-nav > li > a:hover {
+  background-color: rgba(0, 0, 255, 0.7) !important;
+}
+
+/* line 69, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.navbar-nav > li > a, .navbar-nav > li > a:focus, .navbar-nav > li > a:active {
+  color: white !important;
+}
+
+/* line 73, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.container > .row {
+  padding: 50px 0;
+}
+
+/*Slide Elements*/
+/* line 78, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.slide-element {
+  float: right;
+  position: relative;
+  margin-top: 300px;
+  margin-right: 100px;
+}
+/* line 83, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.slide-element h1 {
+  font-size: 90px;
+  font-family: "Averia Serif Libre";
+  position: relative;
+}
+/* line 87, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.slide-element h1.top_text {
+  left: 1000px;
+}
+/* line 90, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.slide-element h1.bottom_text {
+  left: -2000px;
+}
+
+/* line 97, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.container {
+  margin-top: 20px;
+}
+
+/* line 101, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.content-container {
+  background-color: rgba(50, 50, 50, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: left;
+}
+
+/* line 109, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.featured-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 112, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.featured-content h3 {
+  padding: 10px 0px 10px 12px;
+}
+
+/* line 118, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.blocks {
+  margin: 40px 0;
+}
+/* line 120, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.blocks span {
+  background-color: #14329b;
+}
+
+/* line 127, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
+.column-title {
+  font-family: "Averia Serif Libre";
+  font-size: 43px;
+  margin-left: 20px;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(200, 200, 250, 0.7);
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 255, 0));
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 255, 0));
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 255, 0));
+  background: linear-gradient(bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 255, 0));
+}

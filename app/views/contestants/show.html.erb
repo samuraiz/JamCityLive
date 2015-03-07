@@ -20,6 +20,8 @@
   <%= @contestant.image %>
 </p>
 
+  <%= render 'vote' %>
+
 <%= link_to 'Edit', edit_contestant_path(@contestant) %> |
 <%= link_to 'Back', contestants_path %>
 </section>
