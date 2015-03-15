@@ -37,7 +37,7 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
       console.log(res)
       for (var i = 0; i < res.data.length; i++) {
 
-        var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '200px')
+        var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '250px')
         var a = $('<a>').append(img);
         var div = $('<div class="excerpt">').html('<h3>View Image</h3>');
         a.append(div);
