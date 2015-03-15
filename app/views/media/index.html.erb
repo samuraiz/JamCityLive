@@ -30,6 +30,7 @@
 
 <%= link_to 'New Medium', new_medium_path %>
 
+<% content_for :view_js do %>
 <script type="text/javascript">
   console.log('script called');
 url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275387970991|3844b78076699dfc663ac8d1210b0431';
@@ -52,3 +53,4 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
   $(document).ready(makeCall)
   
 </script>
+<%end%>
