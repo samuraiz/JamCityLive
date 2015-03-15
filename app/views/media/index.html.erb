@@ -1,31 +1,21 @@
 <link rel="shortcut icon" type="image/ico" href="https://s3.amazonaws.com/mixture-mixed/1/11173/favicon.ico">
 <link rel="stylesheet" type="text/css" href="./gallery/fonts.css">
+<% content_for :view_css do %>
 <link href="./app.min.css" rel="stylesheet" type="text/css" media="all">
+<style>
+  .portfolio-list{
+    margin-top: 50px;
+  }
+  html{
+    background-color: #000;
+  }
+</style>
 
 <div class="overflow">
   <ul class="portfolio-list">
   </ul>
 </div>
-
-<table>
-  <thead>
-  </thead>
-
-  <tbody>
-    <% @media.each do |medium| %>
-      <tr>
-        <td><%= medium.title %></td>
-        <td><%= medium.description %></td>
-        <td><%= medium.type %></td>
-        <td><%= medium.media_url %></td>
-        <td><%= link_to 'Show', medium %></td>
-        <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
-        <td><%= link_to 'Destroy', medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%end%>
 
 <% content_for :view_js do %>
 <script type="text/javascript">
@@ -35,7 +25,7 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
     $.ajax(url).success(function(res){
       var imgListUL = $('.portfolio-list');
       console.log(res)
-      for (var i = 0; i < res.data.length; i++) {
+      for (var i = 0; i < res.data.length-1; i++) {
 
         var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '250px')
         var a = $('<a>').append(img);

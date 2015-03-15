@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
+  <%=yield :view_css%>
   <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
     <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
       <%=csrf_meta_tags %>
@@ -38,7 +39,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Home", root_path %></li>
           <li><%= link_to "Participants", contestants_path %></li>
-          <li><a href="#">Photo Gallery</a></li>
+          <li><%= link_to "Photo Gallery", media_path %></li>
           <li><a href="#">Jam City TV</a></li>
           <li><a href="#">Events</a></li>
           <li class="dropdown">
