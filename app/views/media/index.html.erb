@@ -42,6 +42,18 @@
   margin-top: 2%;
 }
 
+.lightbox .prev{
+  top: 300px;
+  position: fixed;
+  left:10px;
+}
+
+.lightbox .next{
+  position: fixed;
+  top: 300px;
+  right:10px;
+}
+
 .lightbox:target {
   /** Remove default browser outline */
   outline: none;
@@ -55,9 +67,6 @@
   <ul class="portfolio-list">
   </ul>
 
-  <a href="#_" class="lightbox" id="img1">
-    <img src="https://s3.amazonaws.com/gschierBlog/images/pig-big.jpg">
-  </a>
 </div>
 <%end%>
 
@@ -84,14 +93,23 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
         var li = $('<li>').append(a);
         imgListUL.append(li);
         var lightbox = $('<a class="lightbox" href="#_">').attr('id', 'img'+i);
+        lightbox.append('<div class="prev" id='+""+ i +'><img src="/gallery/images/carousel-previous.png"></div>');
         lightbox.append($('<img>').attr('src', res.data[i].images[1].source));
+        lightbox.append('<div class="next" id='+""+ i +'><img src="/gallery/images/carousel-next.png"></div>');
         wrapper.append(lightbox);
       };
     });
   }
   $(document).ready(makeCall)
-  $('.portfolio-list').on('click', 'li', function(){
-    console.log(this);
-  })
+  $('.overflow').on('click', '.prev', function(e){
+    e.preventDefault();
+    var prev = parseInt(this.id)>0? parseInt(this.id) - 1: parseInt(this.id);
+    window.location = "#img" + prev;
+  });
+  $('.overflow').on('click', '.next', function(e){
+    e.preventDefault();
+    var next = parseInt(this.id) + 1;
+    window.location = "#img" + next;
+  });
 </script>
 <%end%>
