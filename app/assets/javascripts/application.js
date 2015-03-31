@@ -15,8 +15,11 @@
 //= require jquery.modal
 //= require jquery.easing
 //= require jquery_ujs
+//= require bootstrap.min
 //= require turbolinks
 // require_tree
+
+$('.dropdown-toggle').dropdown()
 
 setTimeout(function(){
   jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
@@ -24,3 +27,5 @@ setTimeout(function(){
   });
   jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
 }, 1000);
+
+
