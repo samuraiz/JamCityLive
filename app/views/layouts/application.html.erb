@@ -26,12 +26,12 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+          <!--<span class="sr-only">Toggle navigation</span>-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
         <%= link_to "JAM CITY", root_path, class: 'navbar-brand' %>
       </div>
 
@@ -71,10 +71,6 @@
                   <%= current_user.name %>
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Admin Dashboard</a>
-                  </li>
-                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                  <li class="divider"></li>
                   <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
@@ -83,9 +79,6 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Connect</strong><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-                  <li><%= link_to "Login", new_user_session_path  %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Sign up", new_user_registration_path  %></li>
                 </ul>
               </li>
           <% end %>
@@ -109,16 +102,16 @@
         <div class="col-md-6">
           <p class="text-right">
             <a href="#">
-              <%=image_tag( "social/Facebook.png") %>
+              <%=image_tag( "social/facebook.png") %>
             </a>
             <a href="#">
-              <%=image_tag( "social/Twitter.png") %>
+              <%=image_tag( "social/twitter.png") %>
             </a>
             <a href="#">
               <%=image_tag( "social/googleplus.png") %>
             </a>
             <a href="#">
-              <%=image_tag( "social/YouTube.png") %>
+              <%=image_tag( "social/youTube.png") %>
             </a>
           </p>
         </div>
