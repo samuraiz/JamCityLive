@@ -26867,16 +26867,16 @@ jQuery.extend( jQuery.easing,
 
 
 
+$('.dropdown-toggle').dropdown()
 
+setTimeout(function(){
+    jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
+
+    });
+    jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
+}, 1000);
 
 // require_tree
 
 
-$('.dropdown-toggle').dropdown()
 
-setTimeout(function(){
-  jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
-    
-  });
-  jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
-}, 1000);
