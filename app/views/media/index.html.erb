@@ -39,7 +39,7 @@
   /** Pad the lightbox image */
   max-width: 90%;
   max-height: 80%;
-  margin-top: 2%;
+  margin-top: 6%;
 }
 
 .lightbox .prev{
@@ -62,13 +62,15 @@
   display: block;
 }
 </style>
-    <div class="col-lg-11 content-container">
-      <div class="overflow">
-        <ul class="portfolio-list">
-        </ul>
-      </div>
-    </div>
 <%end%>
+<div class="col-lg-11 content-container">
+  <div class="overflow">
+    <ul class="portfolio-list">
+    </ul>
+  </div>
+  <div class="next-image">next</div>
+</div>
+
 
 
 
@@ -77,13 +79,13 @@
 
 
 <script type="text/javascript">
-  console.log('script called');
 url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275387970991|3844b78076699dfc663ac8d1210b0431';
   var makeCall = function(){
     $.ajax(url).success(function(res){
-      var imgListUL = $('.portfolio-list');
+      var imgListUL = $('.portfolio-list').empty();
       var wrapper = $('.overflow');
       console.log(res)
+      url = res.paging.next
       for (var i = 0; i < res.data.length-1; i++) {
 
         var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '250px')
@@ -93,9 +95,7 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
         var li = $('<li>').append(a);
         imgListUL.append(li);
         var lightbox = $('<a class="lightbox" href="#_">').attr('id', 'img'+i);
-        lightbox.append('<div class="prev" id='+""+ i +'><img src="/gallery/images/carousel-previous.png"></div>');
-        lightbox.append($('<img>').attr('src', res.data[i].images[1].source));
-        lightbox.append('<div class="next" id='+""+ i +'><img src="/gallery/images/carousel-next.png"></div>');
+        lightbox.append('<div class="prev" id='+""+ i +'><img src="/gallery/images/carousel-previous.png"></div>').append($('<img>').attr('src', res.data[i].images[1].source)).append('<div class="next" id='+""+ i +'><img src="/gallery/images/carousel-next.png"></div>');
         wrapper.append(lightbox);
       };
     });
@@ -111,5 +111,7 @@ url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275
     var next = parseInt(this.id) + 1;
     window.location = "#img" + next;
   });
+
+  $('.next-image').click(makeCall)
 </script>
 <%end%>
