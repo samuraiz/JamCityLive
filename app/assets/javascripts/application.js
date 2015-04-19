@@ -19,21 +19,29 @@
 //= require turbolinks
 // require_tree
 
-$('.dropdown-toggle').dropdown();
-
-$(window).on('scroll', function() {
+// Functions
+function navbarAddClass() {
   if($(this).scrollTop() > 75) {
     $('nav').addClass('scroll-bg');
     } else {
     $('nav').removeClass('scroll-bg'); 
   }
+}
+
+// Actions & Events
+$('.dropdown-toggle').dropdown();
+
+$(window).on('scroll', function() {
+  navbarAddClass();
 });
 
-setTimeout(function(){
-  jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
-    
-  });
-  jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
-}, 1000);
+// setTimeout(function(){
+//   jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack");
+//   jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack");
+// }, 1000);
 
-
+// Call default functions
+(function() {
+  // set class for navbar
+  navbarAddClass();
+})();
