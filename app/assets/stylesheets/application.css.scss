@@ -219,7 +219,7 @@ h4 {
   background: linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
 }
 
-.modal {
+.the_modal {
   background-color: white;
   padding-top: 10%;
   background: rgba(0,0,0,0.8);
@@ -229,7 +229,7 @@ h4 {
   transition: opacity 400ms ease-in;
   pointer-events: none;
 }
-.modal > div {
+.the_modal > div {
   border-top: solid 0.8em rgba(0,0,255,0.7);
   margin: 5px 15em 13px 15em;
   border-radius: 10px;

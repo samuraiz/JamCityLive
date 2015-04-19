@@ -1,8 +1,5 @@
-<div id='the_modal' class="modal-content">
-  <div class="modal-header">
-    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
-  </div>
-  <section>
+<div id='the_modal' class="modal-content container">
+  <div>
     <p id="notice"><%= notice %></p>
     <p>
       <strong>Name:</strong>
@@ -19,14 +16,22 @@
       <%= @contestant.nickname %>
     </p>
 
-    <p>
+    <p class="text-center">
       <%= image_tag @contestant.image%><br><br>
-      <%= @contestant.image %>
     </p>
 
-    <%= render 'vote' %>
+    <p>
+      <i class="fa fa-heart"></i>
+      <%= @contestant.votes.count %>
+      Votes
+    </p>
 
-    <%= link_to 'Edit', edit_contestant_path(@contestant) %> |
-    <%= link_to 'Back', contestants_path %>
-  </section>
+
+
+    <%= render 'vote' %>
+    <% if current_user.try(:admin?) %>
+        <%= link_to 'Edit', edit_contestant_path(@contestant) %> |
+    <% end %>
+    <%= link_to 'Back', contestants_path, class: "btn btn-default" %>
+  </div>
 </div>

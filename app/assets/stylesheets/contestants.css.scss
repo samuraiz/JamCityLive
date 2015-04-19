@@ -38,4 +38,7 @@ body#contestants-page {
   font-weight: 300;
   line-height: 1.8em;
   color: #555;
+  .modal-content {
+    z-index: 1000;
+  }
 }
