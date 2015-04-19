@@ -5,7 +5,7 @@
   <h3 class="page-header">Meet the Contestants </h3>
   <% @contestants.each do |contestant| %>
       <li>
-        <%= link_to contestant, { 'data-toggle' => 'the_modal', remote: true } do %>
+        <%= link_to (contestant) do %>
             <div class="contestant">
               <%= image_tag contestant.image.url(:thumb) %>
               <div class="contestant-list-text">
@@ -21,15 +21,6 @@
       </li>
   <% end %>
 </ul>
-<div class="modal fade" role="dialog" aria-labelledby="Contestant">
-  <div class="row">
-    <div class="modal-header">
-      <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
-      <h3 class="modal-heading"></h3>
-    </div>
-    <div class="modal-body">    </div>
-  </div>
-</div>
 <% if current_user.try(:admin?) %>
     <%= link_to 'New Contestant', new_contestant_path, class: "btn btn-default" %>
 <% end %>

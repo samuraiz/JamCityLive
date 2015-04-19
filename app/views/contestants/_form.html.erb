@@ -28,6 +28,21 @@
     <%= image_tag (@contestant.image) if @contestant.image? %><br><br>
     <%= f.file_field :image %>
   </div>
+    <div class="field">
+      <%= f.label :image_b %><br>
+      <%= image_tag (@contestant.image_b) if @contestant.image_b? %><br><br>
+      <%= f.file_field :image_b %>
+    </div>
+    <div class="field">
+      <%= f.label :image_c %><br>
+      <%= image_tag (@contestant.image_c) if @contestant.image_c? %><br><br>
+      <%= f.file_field :image_c %>
+    </div>
+    <div class="field">
+      <%= f.label :image_d %><br>
+      <%= image_tag (@contestant.image_d) if @contestant.image_d? %><br><br>
+      <%= f.file_field :image_d %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>
