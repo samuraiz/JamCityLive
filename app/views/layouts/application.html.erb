@@ -95,18 +95,10 @@
       </div>
       <div class="row">
         <p class="text-center">
-          <a href="#">
-            <%=image_tag( "social/facebook.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/twitter.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/google_plus.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/youtube.png") %>
-          </a>
+          <%= link_to image_tag( "social/facebook.png"), "https://www.facebook.com/pages/Jam-City-Live/1574478196119697", target: "_blank" %>
+          <%= link_to image_tag( "social/twitter.png"), "https://twitter.com/JamCityLive", target: "_blank" %>
+          <%= link_to image_tag( "social/google_plus.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
+          <%= link_to image_tag( "social/youtube.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
         </p>
       </div>
     </div>
