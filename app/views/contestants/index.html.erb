@@ -2,6 +2,7 @@
 
 </div>
 <ul class="contestant-list">
+  <h3 class="page-header">Meet the Contestants </h3>
   <% @contestants.each do |contestant| %>
       <li>
         <%= link_to contestant, { 'data-toggle' => 'the_modal', remote: true } do %>
