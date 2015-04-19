@@ -25,13 +25,13 @@ $(window).on('scroll', function() {
   if($(this).scrollTop() > 75) {
     $('nav').addClass('scroll-bg');
     } else {
-    $('nav').removeClass('scroll-bg'); 
+    $('nav').removeClass('scroll-bg');
   }
 });
 
 setTimeout(function(){
   jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
-    
+
   });
   jQuery('.bottom_text').animate({left: "0px"}, 800, "easeOutBack")
 }, 1000);

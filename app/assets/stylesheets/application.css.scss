@@ -24,6 +24,8 @@
  @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
+ @import 'contestants';
+
 // Mixins
  @mixin backgroundImageGradient($dir...) {
   background-image: -webkit-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
@@ -45,7 +47,7 @@
 // Animation
 
 
-body {
+body#home-page {
   @include backgroundImageGradient(top, rgba(2, 4, 27, .1), rgba(2, 6, 9, 0.1) 15%);
   background-size: contain;
   background-repeat: no-repeat;
@@ -57,9 +59,9 @@ body {
   line-height: 1.8em;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: "Averia Serif Libre";
-}
+//h1, h2, h3, h4, h5 {
+//  font-family: "Averia Serif Libre";
+//}
 
 .navbar {
   @include animate;
@@ -211,32 +213,6 @@ h1, h2, h3, h4, h5 {
   background: linear-gradient(bottom, rgba(0,0,0,0.1), rgba(0,0,255,0));
 }
 
-// Contestants page
-#contestants-page {
-  padding-top: 2em;
-}
-
-.contestant-list {
-  text-align: center;
-}
-
-.contestant-list li {
-  list-style: none;
-  display: inline-block;
-  padding: auto;
-  margin: 1em;
-}
-.contestant-list-text {
-  //  padding: 0.5em;
-}
-.contestant-list li a:hover {
-  text-decoration: none;
-}
-.contestant {
-  width: 200px;
-  height: 270px;
-  background: gray;
-}
 .modal {
   background-color: white;
   padding-top: 10%;

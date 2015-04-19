@@ -3,6 +3,8 @@ class ContestantsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_action :is_admin?, only: [:create, :edit, :update, :destroy]
 
+  layout 'contestants'
+
   respond_to :html
 
 
