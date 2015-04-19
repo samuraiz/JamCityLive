@@ -19,16 +19,42 @@
 @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic);
 
+ /*@import style from google fonts*/
+ @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+ @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+// Mixins
+ @mixin backgroundImageGradient($dir...) {
+  background-image: -webkit-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
+  background-image: -moz-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
+  background-image: -o-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
+  background-image: linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
+ }
+
+ @mixin animate {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+ }
+
+// Variables
+ $dark_blue: #1F5F89;
+
+// Animation
+
 
 body {
-  background-image: url('backgd1.jpg');
+  @include backgroundImageGradient(top, rgba(2, 4, 27, .1), rgba(2, 6, 9, 0.1) 15%);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% -2%;
   color: #555;
-  line-height: 1.8em;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  font-size: 1.8em;
   font-weight: 300;
+  line-height: 1.8em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -36,11 +62,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
+  @include animate;
   border: none;
-  margin-bottom: 0;
-  border-color: rgb(20,20,20);
-  position: fixed;
+  border-radius: 0;
   left: 0;
+  margin-bottom: 0;
+  position: fixed;
   right: 0;
   top: 0;
   z-index: 10;
@@ -49,15 +76,41 @@ h1, h2, h3, h4, h5 {
 .navbar-default {
   /*@include experimental('background', linear-gradient(bottom, rgba(0,0,0,0.3), rgba(0,0,255,0.6)), webkit, moz, o, ms, not khtml);*/
   background: none;
-  padding: 0px;
-  .container {
-    margin-top:0px;
+  padding: 20px 0 10px;
+    .container {
+      margin-top:5px;
+    }
+}
+
+
+
+.navbar-default .navbar-nav {
+  & .open > a {
+    text-shadow: none;
+  }
+  & > li > a {
+    border-radius: 4px;
+    color: #FFF;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-shadow: 1px 1px #444;
+
+    &:hover, :focus {
+      color: #FFF;
+      background-color: rgba(20,40,40,.5);
+    }
   }
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #FFF;
-  background-color: transparent;
+.scroll-bg {
+  border-bottom: 1px solid rgba(31, 95, 137, 0.65);
+  background-color: white;
+  position: fixed;
+  & .navbar-nav > li > a {
+    color: $dark_blue;
+    text-shadow: none;
+  }
 }
 
 .navbar-nav > li > a:hover {
@@ -65,8 +118,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #FFF;
-  padding-top: 35px;
+
 }
 
 
@@ -79,8 +131,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-connect {
-  background-color: #1F5F89;
-  margin-top: 30px;
+  background-color: $dark_blue;
   margin-left: 10px;
 }
 
