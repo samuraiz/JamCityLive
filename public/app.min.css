@@ -686,7 +686,7 @@ li.sel {
     left: 50%;
     width: 20em;
     margin-left: -10em;
-    text-align: center
+    text-align: center;
 }
 .overflow {
     overflow-x: hidden
@@ -696,7 +696,6 @@ li.sel {
     margin-right: -2px;
     margin-left: -2px;
     overflow: hidden;
-    background-color: #efefef;
     -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .02);
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .02);
     text-align: center

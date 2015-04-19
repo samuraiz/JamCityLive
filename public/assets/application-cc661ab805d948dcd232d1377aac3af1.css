@@ -19,7 +19,7 @@
 /* line 22, /Users/MonsieurSlim/workspace/JamCityLive/app/assets/stylesheets/application.css.scss */
 body {
   background-image: url("/assets/bg.jpg");
-  background-size: contain;
+  background-size: cover;
   background-color: black;
   background-repeat: no-repeat;
   background-position: 50% -8%;
@@ -201,4 +201,84 @@ h1, h2, h3, h4, h5 {
   background: -moz-linear-gradient(white, white);
   background: -webkit-linear-gradient(white, white);
   background: -o-linear-gradient(white, white);
+}
+
+/*Profile Picture*/
+.profile-img {
+    width: 32px;
+    height: 32px;
+    margin: -6px 10px -8px 0;
+    border-radius: 50%;
+}
+
+.jcl-img {
+    max-height: 250px;
+    max-width: 250px;
+    margin-left: 120px;
+}
+
+/*Media page */
+
+.overflow {
+       overflow-x: hidden
+   }
+.portfolio-list {
+    list-style: none;
+    margin-right: -2px;
+    margin-left: -2px;
+    overflow: hidden;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .02);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .02);
+    text-align: center
+}
+.portfolio-list li {
+    display: inline-block;
+    width: 50%;
+    max-width: 480px;
+    text-align: left
+}
+@media (min-width: 30em) {
+    .portfolio-list li {
+        width: 33.33%
+    }
+}
+@media (min-width: 54.375em) {
+    .portfolio-list li {
+        width: 25%
+    }
+}
+.portfolio-list li img {
+    width: 100%
+}
+.portfolio-list li a {
+    position: relative;
+    display: inline-block
+}
+@media (min-width: 54.375em) {
+    .portfolio-list li a:hover .excerpt {
+        display: inline-block
+    }
+}
+.portfolio-list.instagram-list {
+    max-width: 2400px;
+    margin: 0 auto;
+    display: block
+}
+.portfolio-list.instagram-list li {
+    float: left;
+    max-width: 600px
+}
+.lt-ie9 .portfolio-list {
+    text-align: center;
+    display: block
+}
+.lt-ie9 .portfolio-list li {
+    width: 24%;
+    float: none
+}
+.lt-ie9 .portfolio-list li img {
+    height: auto;
+    display: block;
+    max-width: none;
+    width: 100%
 }

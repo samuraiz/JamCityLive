@@ -11,17 +11,28 @@
   <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
   <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
   <%=csrf_meta_tags %>
+<<<<<<< HEAD
+=======
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <%=yield :view_css%>
+>>>>>>> f36b1003611c764c953647a59cd229ed018a401d
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+          <!--<span class="sr-only">Toggle navigation</span>-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+          <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
         <%= link_to "JAM CITY", root_path, class: 'navbar-brand' %>
       </div>
 
@@ -29,17 +40,17 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to "Home", root_path %></li>
           <li><%= link_to "Participants", contestants_path %></li>
-          <li><a href="#">Photo Gallery</a></li>
-          <li><a href="#">Jam City TV</a></li>
-          <li><a href="#">Events</a></li>
+          <li><%= link_to "Photo Gallery", media_path %></li>
+          <li><%= link_to "Jam City Tv", tv_path %></li>
+          <li><%= link_to "Events", events_path %></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Affiliates <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Institutions</a>
+              <li><a href="#">What is Jam City</a>
               </li>
               <li><a href="#">Sponsors</a>
               </li>
-              <li><a href="#">Something else here</a>
+              <li><a href="#">Contact Us</a>
               </li>
               <li class="divider"></li>
               <li><a href="#">Become a Sponsor</a>
@@ -56,12 +67,11 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><%= current_user.name %></strong><b class="caret"></b></a>
+                <a href="#" data-toggle="dropdown" data-target="dropdown-menu" role="button" aria-expanded="false" class="dropdown-toggle">
+                  <%= image_tag current_user.image, class: "profile-img" %>
+                  <%= current_user.name %>
+                  <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Admin Dashboard</a>
-                  </li>
-                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                  <li class="divider"></li>
                   <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
@@ -70,9 +80,6 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Connect</strong><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-                  <li><%= link_to "Login", new_user_session_path  %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Sign up", new_user_registration_path  %></li>
                 </ul>
               </li>
           <% end %>
@@ -110,6 +117,15 @@
         </p>
       </div>
     </div>
+<<<<<<< HEAD
   </footer>
+=======
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <%=javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
+      <!-- Latest compiled and minified JavaScript -->
+      <%=javascript_include_tag( 'bootstrap', 'data-turbolinks-track'=> true) %>
+        <%=javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
+        <%=yield :view_js%>
+>>>>>>> f36b1003611c764c953647a59cd229ed018a401d
 </body>
 </html>

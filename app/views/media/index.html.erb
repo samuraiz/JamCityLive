@@ -1,54 +1,117 @@
 <link rel="shortcut icon" type="image/ico" href="https://s3.amazonaws.com/mixture-mixed/1/11173/favicon.ico">
-<link rel="stylesheet" type="text/css" href="./gallery/fonts.css">
-<link href="./app.min.css" rel="stylesheet" type="text/css" media="all">
+<% content_for :view_css do %>
+<!--<link href="./app.min.css" rel="stylesheet" type="text/css" media="all">-->
+<style>
+  .portfolio-list{
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+  .portfolio-list li{
+    margin-right: 2px;
+    margin-left: 2px;
+    border:2px liquid #999;
+  }
+  .js-img{
+    margin-top: 10px;
+  }
+  html{
+    background-color: #000;
+  }
 
-<div class="overflow">
-  <ul class="portfolio-list">
-  </ul>
+  /** LIGHTBOX MARKUP **/
+
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 6%;
+}
+
+.lightbox .prev{
+  top: 300px;
+  position: fixed;
+  left:10px;
+}
+
+.lightbox .next{
+  position: fixed;
+  top: 300px;
+  right:10px;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+</style>
+<%end%>
+<div class="col-lg-11 content-container">
+  <div class="overflow">
+    <ul class="portfolio-list">
+    </ul>
+  </div>
+  <div class="next-image">next</div>
 </div>
 
-<table>
-  <thead>
-  </thead>
 
-  <tbody>
-    <% @media.each do |medium| %>
-      <tr>
-        <td><%= medium.title %></td>
-        <td><%= medium.description %></td>
-        <td><%= medium.type %></td>
-        <td><%= medium.media_url %></td>
-        <td><%= link_to 'Show', medium %></td>
-        <td><%= link_to 'Edit', edit_medium_path(medium) %></td>
-        <td><%= link_to 'Destroy', medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Medium', new_medium_path %>
+<% content_for :view_js do %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 
 <script type="text/javascript">
-  console.log('script called');
 url='https://graph.facebook.com/v2.2/1582643425303174/photos?access_token=721275387970991|3844b78076699dfc663ac8d1210b0431';
   var makeCall = function(){
     $.ajax(url).success(function(res){
-      var imgListUL = $('.portfolio-list');
+      var imgListUL = $('.portfolio-list').empty();
+      var wrapper = $('.overflow');
       console.log(res)
-      for (var i = 0; i < res.data.length; i++) {
+      url = res.paging.next
+      for (var i = 0; i < res.data.length-1; i++) {
 
-        var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '200px')
-        var a = $('<a>').append(img);
-        var div = $('<div class="excerpt">').html('<h3>View Image</h3>');
-        a.append(div);
+        var img = $('<img>').attr('src', res.data[i].images[1].source).attr('class', 'js-img').attr('height', '250px')
+        var a = $('<a>').attr('href', '#img'+i).append(img);
+        // var div = $('<div class="excerpt">').html('<h3>View Image</h3>');
+        // a.append(div);
         var li = $('<li>').append(a);
         imgListUL.append(li);
-        
+        var lightbox = $('<a class="lightbox" href="#_">').attr('id', 'img'+i);
+        lightbox.append('<div class="prev" id='+""+ i +'><img src="/gallery/images/carousel-previous.png"></div>').append($('<img>').attr('src', res.data[i].images[1].source)).append('<div class="next" id='+""+ i +'><img src="/gallery/images/carousel-next.png"></div>');
+        wrapper.append(lightbox);
       };
     });
   }
   $(document).ready(makeCall)
-  
+  $('.overflow').on('click', '.prev', function(e){
+    e.preventDefault();
+    var prev = parseInt(this.id)>0? parseInt(this.id) - 1: parseInt(this.id);
+    window.location = "#img" + prev;
+  });
+  $('.overflow').on('click', '.next', function(e){
+    e.preventDefault();
+    var next = parseInt(this.id) + 1;
+    window.location = "#img" + next;
+  });
+
+  $('.next-image').click(makeCall)
 </script>
+<%end%>
