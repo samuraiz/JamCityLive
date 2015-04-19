@@ -1,5 +1,20 @@
-body{
-    background: url('about-bg.jpg');
+body#home-page{
+     background: url('about-bg.jpg');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.carousel-inner{
+    background: none;
+    /*background: url('about-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;*/
+}
+
+#about_us{
+    margin-top: 200px;
+}
+
+.inline{
+    display: inline-block;
 }
