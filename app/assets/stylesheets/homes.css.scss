@@ -10,30 +10,27 @@
 .my-row {
   display: flex;
 
-  & .news, .videos {
-    flex: 1 40%;
+  & .news {
+    flex: 1 60%;
     display: flex;
     flex-direction: column;
-
+    
     & .news-item {
       flex: 1 auto;
       margin-bottom: 20px;
 
-      & .news-img {
-        flex: 0 0 auto;
-      }
-      & .new-content {
-        flex: 1 1 auto;
+      & img {
+        @include border_and_shadow;
       }
     }
   }
-  & .news {
-    flex: 1 60%;
-  }
-  .videos iframe {
-    box-shadow: 3px 3px #1F5F89;
-  }
-  .news img {
-    box-shadow: 3px 3px #1F5F89;
+  .videos {
+    flex: 1 40%;
+    display: flex;
+    flex-direction: column;
+
+    & iframe {
+      @include border_and_shadow;
+    }
   }
 }

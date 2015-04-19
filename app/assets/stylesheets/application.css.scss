@@ -32,6 +32,11 @@
   transition: all 0.5s ease;
 }
 
+@mixin border_and_shadow {
+  border: 7px solid rgb(250,250,250);
+  box-shadow: 1px 5px 9px rgb(100,100,100);
+}
+
 // Variables
 $dark_blue: #1F5F89;
 
