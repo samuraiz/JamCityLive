@@ -3,39 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Contestants page
-.pre-contestants {
-  margin-top: -3em;
-  height: 45vh;
-  width: 100%;
-}
+// .pre-contestants {
+//   height: 45vh;
+//   margin-top: -3em;
+//   width: 100%;
+// }
 .contestant-list {
   text-align: center;
+
+  & li {
+    box-shadow: 2px 2px black;
+    display: inline-block;
+    list-style: none;
+    margin: 1em;
+    padding: auto;
+
+    & a:hover {
+      text-decoration: none;
+    }
+  }
 }
 
-.contestant-list li {
-  list-style: none;
-  display: inline-block;
-  padding: auto;
-  margin: 1em;
-  box-shadow: 2px 2px black;
-}
-.contestant-list-text {
-  //  padding: 0.5em;
-}
-.contestant-list li a:hover {
-  text-decoration: none;
-}
 .contestant {
-  width: 200px;
-  height: 270px;
   background: gray;
+  height: 270px;
+  width: 200px;
 }
-body#contestants-page {
-  background-image: url('ent-contestants.jpg');
-  background-size: contain;
+.contestants-page-header {
+  @include backgroundImageGradient(url('ent-contestants.jpg'), top, rgba(55, 55, 55, .2), rgba(55, 55, 55, 0.2) 15%);
+  background-position: 50% 10%;
   background-repeat: no-repeat;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  line-height: 1.8em;
-  color: #555;
+  background-size: cover;
+  border-bottom: 5px solid $dark_blue;
+  height: 400px;
 }
