@@ -1,9 +1,10 @@
+require 'google/api_client';
+
 class AboutController < ApplicationController
-  require 'google/api_client';
-  client = Google::APIClient.new
+  # @client = Google::APIClient.new
 
   def show
-
+    @client = Google::APIClient.new(:application_name => "jamcity",:application_version => "0.1")
   end
 
   #sample codes for google drive

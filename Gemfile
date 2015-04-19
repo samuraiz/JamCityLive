@@ -53,6 +53,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
 
+# Use google api client to access google drive files
+gem 'google-api-client', '~> 0.7.1',  :require => 'google/api_client'
+
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Use rspec for testing
 gem 'rspec'
