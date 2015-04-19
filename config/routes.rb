@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'tv',to: 'tv#show', as: :tv
 
+  get 'about',to: 'about#show', as: :about
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

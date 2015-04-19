@@ -19,7 +19,7 @@
 //= require turbolinks
 // require_tree
 
-$('.dropdown-toggle').dropdown()
+$('.dropdown-toggle').dropdown();
 
 setTimeout(function(){
   jQuery('.top_text').animate({left: "0px"}, 1000, "easeOutBack", function(){
