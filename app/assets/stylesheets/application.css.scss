@@ -42,6 +42,7 @@ $dark_blue: #1F5F89;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "contestants";
+@import "events";
 @import "fonts";
 @import "homes";
 @import "modifier";
@@ -80,12 +81,19 @@ h4 {
   right: 0;
   top: 0;
   z-index: 1;
+
+  & .logo {
+    left: 120px;
+    position: fixed;
+    top: 4px;
+    z-index: 2;
+  }
 }
 
 .navbar-default {
   /*@include experimental('background', linear-gradient(bottom, rgba(0,0,0,0.3), rgba(0,0,255,0.6)), webkit, moz, o, ms, not khtml);*/
   background: none;
-  padding: 20px 0 10px;
+  padding: 20px 0;
     .container {
       margin-top:5px;
     }
@@ -120,6 +128,10 @@ h4 {
   & .navbar-nav > li > a {
     color: $dark_blue;
     text-shadow: none;
+  }
+  & .logo {
+    @include animate;
+    width: 110px;
   }
 }
 
