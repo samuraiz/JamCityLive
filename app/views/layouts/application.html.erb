@@ -8,7 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
-  <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
   <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%=csrf_meta_tags %>
@@ -56,7 +55,7 @@
               </li>
           <% else %>
               <li>
-                <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-connect" %>
+                <%= button_to "Connect with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-connect" %>
               </li>
           <% end %>
           </li>

@@ -14,16 +14,15 @@
 * require_self
 */
 
- @import 'contestants';
-
 // Mixins
-@mixin backgroundImageGradient($dir...) {
-  background-image: -webkit-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
-  background-image: -moz-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
-  background-image: -o-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
-  background-image: linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
+@mixin backgroundImageGradient($image-url, $dir...) {
+  background-image: -webkit-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), $image-url;
+  background-image: -moz-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), $image-url;
+  background-image: -o-linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), $image-url;
+  background-image: linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), $image-url;
 }
 
+// Animation
 @mixin animate {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -31,23 +30,26 @@
   transition: all 0.5s ease;
 }
 
+@mixin border_and_shadow {
+  border: 7px solid rgb(250,250,250);
+  box-shadow: 1px 5px 9px rgb(100,100,100);
+}
+
 // Variables
 $dark_blue: #1F5F89;
 
 /* Import other stylesheets */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "contestants";
 @import "fonts";
 @import "homes";
 @import "modifier";
 
-// Animation
 
 
-body#home-page {
-  @include backgroundImageGradient(top, rgba(2, 4, 27, .1), rgba(2, 6, 9, 0.1) 15%);
+body {
   @include animate;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% -2%;
   color: #555;
   font-family: "Lato", sans-serif;
   font-size: 1.5em;

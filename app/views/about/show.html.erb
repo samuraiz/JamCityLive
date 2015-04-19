@@ -1,85 +1,102 @@
-<section id="about_us">
-  <div class="background">
-    <div>
-      <h1>About Us Page</h1>
+<% content_for :view_css do %>
+  <%=stylesheet_link_tag( 'about', media: 'all', 'data-turbolinks-track'=> true )%>
+<% end %>
+
+
+<!-- header -->
+<!-- header -->
+<div id="carousel-top" class="carousel slide" data-ride="carousel" style="height:800px">
+    <div class="carousel-inner">
+        <div class="slide-element">
+            
+        </div>
     </div>
-    <section id="what">
-      <div class="col-lg-4 text-center">
-        <iframe width="500" height="300" src="http://www.youtube.com/embed/wXRtpMtZFUI?wmode=opaque" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="col-lg-11 content-container">
+  <section id="about_us">
+    <div class="background">
+      <div style="text-align:center">
+        <h4 class="inline">About JamCity</h4>
+        <%= link_to image_tag( "logo.jpg", width: "100px", class: "inline"), "https://twitter.com/JamCityLive", target: "_blank"%>
       </div>
-      <div>
-        <p>
-          What is Jam City?
-        </p>
-        <ul>
-          <li>
-            Jam City is an initiative that simply encourages the concept “Learn by Doing”.
-          </li>
-          <li>
-            These days, students go to schools but still do not get educated. They get drained
-            in school work and they only think of reading to pass exams and just getting their
-            certificates.
-          </li>
-          <li>
-            Jam City is all about educating young people. Educating in the sense that it is all
-            about providing students with a platform to practice what they really want to
-            become in the near future.
-          </li>
-          <li>
-            Jam City is all about giving these young people room to build up their skills and
-            talents by involving them in activities that will teach and prepare them to improve
-            their production levels.
-          </li>
-        </ul>
-        <br>
-        <p>
-          Aims and Objectives
-        </p>
-        <ul>
-          <li>
-            Jam City’s foremost aim is to educate and train participants in different fields
-            especially in arts and entertainment.
-          </li>
-          <li>
-            Jam City aims to educate and improve skills such Beas creative skills, productive
-            skills, management skills and leadership skills, in participants, which will help
-            them to be independent.
-          </li>
-          <li>
-            Also, Jam City is all about providing quality entertainment to the audience by
-            providing live performances from participants to the audience.
-          </li>
-        </ul>
-        <p>
-          Benefits
-        </p>
-        <ul>
-          <li>
-            Jam City is an initiative that is designed to urbanize our culture through its
-            various projects and activities.
-          </li>
-          <li>
-            Jam City will focus on readily equipping young people to help them achieve their
-            goals, hereby ensuring that the next generation with be on a world class level
-            especially in arts and entertainment.
-          </li>
-          <li>
-            Jam City is also about providing quality entertainment for its audience.
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="sponsors">
-      <div>
-        <h3>
-          Meet our Sponsors
-        </h3>
-      </div>
-    </section>
-    <section id="contact">
-      <div>
-        <h3>Contact Us</h3>
-      </div>
-    </section>
-  </div>
-</section>
+      <section id="what">
+        <div style="text-align:center" class="videos">
+          <iframe class="video-box" width="700" height="500" src="http://www.youtube.com/embed/wXRtpMtZFUI?wmode=opaque" frameborder="2" allowfullscreen></iframe>
+        </div>
+        <div>
+          <p>
+            What is Jam City?
+          </p>
+          <ul>
+            <li>
+              Jam City is an initiative that simply encourages the concept “Learn by Doing”.
+            </li>
+            <li>
+              These days, students go to schools but still do not get educated. They get drained
+              in school work and they only think of reading to pass exams and just getting their
+              certificates.
+            </li>
+            <li>
+              Jam City is all about educating young people. Educating in the sense that it is all
+              about providing students with a platform to practice what they really want to
+              become in the near future.
+            </li>
+            <li>
+              Jam City is all about giving these young people room to build up their skills and
+              talents by involving them in activities that will teach and prepare them to improve
+              their production levels.
+            </li>
+          </ul>
+          <br>
+          <p>
+            Aims and Objectives
+          </p>
+          <ul>
+            <li>
+              Jam City’s foremost aim is to educate and train participants in different fields
+              especially in arts and entertainment.
+            </li>
+            <li>
+              Jam City aims to educate and improve skills such Beas creative skills, productive
+              skills, management skills and leadership skills, in participants, which will help
+              them to be independent.
+            </li>
+            <li>
+              Also, Jam City is all about providing quality entertainment to the audience by
+              providing live performances from participants to the audience.
+            </li>
+          </ul>
+          <p>
+            Benefits
+          </p>
+          <ul>
+            <li>
+              Jam City is an initiative that is designed to urbanize our culture through its
+              various projects and activities.
+            </li>
+            <li>
+              Jam City will focus on readily equipping young people to help them achieve their
+              goals, hereby ensuring that the next generation with be on a world class level
+              especially in arts and entertainment.
+            </li>
+            <li>
+              Jam City is also about providing quality entertainment for its audience.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="sponsors">
+        <div>
+          <h3>
+            Meet our Sponsors
+          </h3>
+        </div>
+      </section>
+      <section id="contact">
+        <div>
+          <h3>Contact Us</h3>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
