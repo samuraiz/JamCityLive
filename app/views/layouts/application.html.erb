@@ -54,7 +54,7 @@
               </li>
           <% else %>
               <li>
-                <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-connect" %>
+                <%= button_to "Connect with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-connect" %>
               </li>
           <% end %>
           </li>
