@@ -11,12 +11,18 @@
   <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
   <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
   <%=csrf_meta_tags %>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <%=yield :view_css%>
 </head>
+
 <body>
+  <!-- NAVBAR -->
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -30,8 +36,7 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><%= link_to "Home", root_path %></li>
+        <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Participants", contestants_path %></li>
           <li><%= link_to "Photo Gallery", media_path %></li>
           <li><%= link_to "Jam City Tv", tv_path %></li>
@@ -50,15 +55,8 @@
               </li>
             </ul>
           </li>
-        </ul>
-        <!--  <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form> -->
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
+          <li>
+            <% if user_signed_in? %>
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" data-target="dropdown-menu" role="button" aria-expanded="false" class="dropdown-toggle">
                   <%= image_tag current_user.image, class: "profile-img" %>
@@ -69,47 +67,59 @@
                 </ul>
               </li>
           <% else %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Connect</strong><b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-                </ul>
+              <li>
+                <btn href="#" class="btn btn-primary btn-connect"><strong>Connect</strong></btn>
               </li>
           <% end %>
+          </li>
         </ul>
+        <!--  <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form> -->
       </div>
     </div>
   </nav>
   <!-- header end -->
 
   <!-- body content -->
-    <%=yield %>
+  <%=yield %>
     <!-- body content end -->
 
-  <footer>
-    <div class="container text-center">
-      <h1 class="quote">“Think of yourself as a brand. You need to be remembered. What will they remember you for? What defines you? If you have it in you, do something that defines you. Invent something, develop a unique skill, get noticed for something — it creates a talking point.”
-        ― Chris Arnold</h1>
+
+    <!-- footer -->
+    <div class="container">
       <div class="row">
-        <em>©copyright Samurias 2015 all rights reserved</em>
-      </div>
-      <div class="row">
-        <p class="text-center">
-          <a href="#">
-            <%=image_tag( "social/facebook.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/twitter.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/google_plus.png") %>
-          </a>
-          <a href="#">
-            <%=image_tag( "social/youtube.png") %>
-          </a>
-        </p>
+        <div class="col-md-6">
+          <em>©copyright Samurias 2015 all rights reserved</em>
+        </div>
+        <div class="col-md-6">
+          <p class="text-right">
+            <a href="#">
+              <%=image_tag( "social/facebook.png") %>
+            </a>
+            <a href="#">
+              <%=image_tag( "social/twitter.png") %>
+            </a>
+            <a href="#">
+              <%=image_tag( "social/googleplus.png") %>
+            </a>
+            <a href="#">
+              <%=image_tag( "social/youtube.png") %>
+            </a>
+          </p>
+        </div>
       </div>
     </div>
-  </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <%=javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
+      <!-- Latest compiled and minified JavaScript -->
+      <%=javascript_include_tag( 'bootstrap', 'data-turbolinks-track'=> true) %>
+        <%=javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
+        <%=yield :view_js%>
 </body>
+
 </html>
+<!-- footer end -->
