@@ -47,6 +47,6 @@ class ContestantsController < ApplicationController
     end
 
     def contestant_params
-      params.require(:contestant).permit(:name, :bio, :nickname, :image)
+      params.require(:contestant).permit(:name, :bio, :nickname, :image, :image_b, :image_c, :image_d)
     end
 end

@@ -9,7 +9,7 @@ class VotesController < ApplicationController
   def create
     @vote_contestant = Vote.new(contestant_vote_params)
     @vote_contestant.save
-    redirect_to :back
+    redirect_to :back, notice: "You have successfully Voted for the Contestant!"
   end
 
   def destroy
