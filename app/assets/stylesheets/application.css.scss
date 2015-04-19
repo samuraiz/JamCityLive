@@ -24,6 +24,7 @@
   background-image: linear-gradient($dir...), -webkit-linear-gradient(bottom, rgba(255,255,255,.3), rgba(255,255,255,.3)), url('backgd1.jpg');
 }
 
+// Animation
 @mixin animate {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -41,7 +42,6 @@ $dark_blue: #1F5F89;
 @import "homes";
 @import "modifier";
 
-// Animation
 
 
 body#home-page {

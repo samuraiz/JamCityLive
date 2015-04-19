@@ -15,7 +15,7 @@
 //= require jquery.modal
 //= require jquery.easing
 //= require jquery_ujs
-//= require bootstrap.min
+//= require bootstrap
 //= require turbolinks
 // require_tree
 
