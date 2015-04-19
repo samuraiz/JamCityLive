@@ -1,6 +1,11 @@
 <div id='the_modal' class="modal-content container">
   <div>
-    <p id="notice"><%= notice %></p>
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <p>
       <strong>Name:</strong>
       <%= @contestant.name %>
