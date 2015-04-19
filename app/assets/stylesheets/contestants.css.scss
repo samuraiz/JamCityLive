@@ -2,3 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Contestants page
+.pre-contestants {
+  background-image: url('ent-contestants.jpg');
+  height: 50vh;
+  width: 100%;
+}
+.contestant-list {
+  text-align: center;
+}
+
+.contestant-list li {
+  list-style: none;
+  display: inline-block;
+  padding: auto;
+  margin: 1em;
+}
+.contestant-list-text {
+  //  padding: 0.5em;
+}
+.contestant-list li a:hover {
+  text-decoration: none;
+}
+.contestant {
+  width: 200px;
+  height: 270px;
+  background: gray;
+}
+body#contestants-page {
+  font-family: "Lato", sans-serif;
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #555;
+}

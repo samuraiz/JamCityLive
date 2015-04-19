@@ -1,36 +1,34 @@
-<section id="contestants-page">
-  <div class="container-fluid">
-    <h3 class="page-header">Contestants</h3>
-    <ul class="contestant-list">
-      <% @contestants.each do |contestant| %>
-          <li>
-            <%= link_to contestant, { 'data-toggle' => 'the_modal', remote: true } do %>
-                <div class="contestant">
-                  <%= image_tag contestant.image.url(:thumb) %>
-                  <div class="contestant-list-text">
-                    <p class="name"><%= contestant.name  %></p>
-                    <p class="">(<%= contestant.nickname %>)</p>
-                  </div>
-                </div>
-            <% end %>
-            <% if current_user.try(:admin?) %>
-                <%= link_to 'Edit', edit_contestant_path(contestant), class: "btn btn-default" %>
-                <%= link_to 'Destroy', contestant, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </li>
-      <% end %>
-    </ul>
-    <div class="modal fade" role="dialog" aria-labelledby="Contestant">
-      <div class="row">
-        <div class="modal-header">
-          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
-          <h3 class="modal-heading"></h3>
-        </div>
-        <div class="modal-body">    </div>
-      </div>
+<div class="pre-contestants">
+
+</div>
+<ul class="contestant-list">
+  <% @contestants.each do |contestant| %>
+      <li>
+        <%= link_to contestant, { 'data-toggle' => 'the_modal', remote: true } do %>
+            <div class="contestant">
+              <%= image_tag contestant.image.url(:thumb) %>
+              <div class="contestant-list-text">
+                <p class="name"><%= contestant.name  %></p>
+                <p class="">(<%= contestant.nickname %>)</p>
+              </div>
+            </div>
+        <% end %>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Edit', edit_contestant_path(contestant), class: "btn btn-default" %>
+            <%= link_to 'Destroy', contestant, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </li>
+  <% end %>
+</ul>
+<div class="modal fade" role="dialog" aria-labelledby="Contestant">
+  <div class="row">
+    <div class="modal-header">
+      <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+      <h3 class="modal-heading"></h3>
     </div>
-    <% if current_user.try(:admin?) %>
-        <%= link_to 'New Contestant', new_contestant_path, class: "btn btn-default" %>
-    <% end %>
+    <div class="modal-body">    </div>
   </div>
-</section>
+</div>
+<% if current_user.try(:admin?) %>
+    <%= link_to 'New Contestant', new_contestant_path, class: "btn btn-default" %>
+<% end %>
