@@ -12,22 +12,20 @@
  *
  * require_tree .
  * require_self
- */ 
+ */
 
- /*@import style from google fonts*/
+/*@import style from google fonts*/
 
- @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
- @import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic);
+@import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic);
 
 
 body {
-  background-image: url(image-path('bg.jpg'));
-  background-size: cover;
-  background-color: rgb(0,0,0);
+  background-image: url('backgd1.jpg');
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 50% -8%;
-  color: white;
-  font-family: "Open Sans";
+  background-position: 50% -2%;
+  color: #555;
   line-height: 1.8em;
   font-weight: 300;
 }
@@ -37,47 +35,58 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
+  border: none;
   margin-bottom: 0;
   border-color: rgb(20,20,20);
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .navbar-default {
   /*@include experimental('background', linear-gradient(bottom, rgba(0,0,0,0.3), rgba(0,0,255,0.6)), webkit, moz, o, ms, not khtml);*/
-  background: -webkit-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
-  background: -moz-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
-  background: -o-linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
-  background: linear-gradient(bottom, rgba(0,0,100,0.5), rgba(0,0,255,0.7));
+  background: none;
   padding: 0px;
-    .container {
-      margin-top:0px;
-    }
+  .container {
+    margin-top:0px;
+  }
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #999;
-    background-color: transparent;
+  color: #FFF;
+  background-color: transparent;
 }
 
 .navbar-nav > li > a:hover {
-  background-color: rgba(0,0,255,0.7) !important;
+  // background-color: rgba(0,0,255,0.7) !important;
 }
 
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+  padding-top: 35px;
+}
+
+
 .navbar-nav > li > a, .navbar-nav > li > a:focus , .navbar-nav > li > a:active {
-    color: white !important;
+//  color: white !important;
 }
 
 .navbar-nav > li > a:active {
-  background-color: #009EEB !important;
+//  background-color: #009EEB !important;
 }
+
+.btn-connect {
+  background-color: #1F5F89;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
 /*Profile Picture*/
 .profile-img {
-//  display: inline-block;
-//  float: left;
+  //  display: inline-block;
+  //  float: left;
   width: 32px;
   height: 32px;
   margin: -6px 10px -8px 0;
@@ -114,8 +123,8 @@ h1, h2, h3, h4, h5 {
 
 .content-container {
   background-color: rgba(50,50,50,.5);
-  margin-left: auto; 
-  margin-right: auto; 
+  margin-left: auto;
+  margin-right: auto;
   float: none;
   clear: left;
 }
@@ -166,7 +175,7 @@ h1, h2, h3, h4, h5 {
   margin: 1em;
 }
 .contestant-list-text {
-//  padding: 0.5em;
+  //  padding: 0.5em;
 }
 .contestant-list li a:hover {
   text-decoration: none;
@@ -197,6 +206,7 @@ h1, h2, h3, h4, h5 {
   background: -o-linear-gradient(#ffffff, #ffffff);
 }
 footer {
+  color: white;
   background-color: #1F5F89;
   font-family: 'Lato', sans-serif;
   .quote {
