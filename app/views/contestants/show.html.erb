@@ -26,8 +26,6 @@
       Votes
     </p>
 
-
-
     <%= render 'vote' %>
     <% if current_user.try(:admin?) %>
         <%= link_to 'Edit', edit_contestant_path(@contestant) %> |
