@@ -10,7 +10,6 @@
 .my-row {
   display: flex;
 
-  
   & .news, .videos {
     flex: 1 40%;
     display: flex;
@@ -30,5 +29,11 @@
   }
   & .news {
     flex: 1 60%;
+  }
+  .videos iframe {
+    box-shadow: 3px 3px #1F5F89;
+  }
+  .news img {
+    box-shadow: 3px 3px #1F5F89;
   }
 }
