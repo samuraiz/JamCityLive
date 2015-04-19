@@ -1,0 +1,20 @@
+// Modifies main styles
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.carousel-control-flex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.fa-flex-col-reverse {
+  flex: 0 50%;
+  font-size: 4em;
+}
+

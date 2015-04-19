@@ -1,30 +1,81 @@
 <!-- header -->
-<div id="carousel-top" class="carousel slide" data-ride="carousel" style="height:600px">
-    <div class="carousel-inner">
-        <div class="slide-element">
-            <h1 class="top_text">Jam City</h1>
-            <h1 class="bottom_text">Live</h1>
-        </div>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:800px">
+   <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag("backgd1.jpg") %>
+      <div class="carousel-caption">
+        ...
+      </div>
     </div>
+    <div class="item">
+      <%= image_tag("backgd1.jpg") %>
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+      <!-- <div class="slide-element">
+          <h1 class="top_text">Jam City</h1>
+          <h1 class="bottom_text">Live</h1>
+      </div> -->
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control carousel-control-flex" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="fa fa-angle-left fa-flex-col-reverse" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control carousel-control-flex" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="fa fa-angle-right fa-flex-col-reverse" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 
 </div>
 <div class="container col-lg-12">
-    <h3 class="column-title">Jam City Concert: Featured Videos</h3>
-    <div class="row">
-        <div class="col-lg-4 text-center">
-            <iframe width="350" height="225" src="https://www.youtube.com/embed/c8HW77YEkAE?rel=0&amp;showinfo=0" controls="0" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="col-lg-4 text-center">
-            <iframe width="350" height="225" src="https://www.youtube.com/embed/c8HW77YEkAE?rel=0&amp;showinfo=0" controls="0" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="col-lg-4 text-center">
-            <iframe width="350" height="225" src="https://www.youtube.com/embed/SgB7CFBjWaM?rel=0&amp;showinfo=0" controls="0" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+    <!-- Container for contestants -->
 </div>
 <div class="col-lg-11 content-container">
+  <div class="my-row">
+    <div class="news">
+      <h3>Latest News</h3>
+      <div class="news-item">
+        <img class="img-square col-lg-4 no-padding" src="/assets/jam_city_aud.jpg" alt="" />
+        <div class="col-lg-7">
+          <h4 class="no-margin">Title Sample</h4>
+          <p>Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heav </p>
+          <a href="#" class="btn btn-info btn-sm">read more...</a>
+        </div>
+        
+      </div>
+      <div class="news-item">
+        <img class="img-square col-lg-4 no-padding" src="/assets/jam_city_aud.jpg" alt="" />
+        <div class="col-lg-7">
+          <h4 class="no-margin">Title Sample</h4>
+          <p>Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heav </p>
+          <a href="#" class="btn btn-info btn-sm">read more...</a>
+        </div>
+        
+      </div>
+      <div class="news-item">
+        <img class="img-square col-lg-4 no-padding" src="/assets/jam_city_aud.jpg" alt="" />
+        <div class="col-lg-7">
+          <h4 class="no-margin">Title Sample</h4>
+          <p>Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heavy and exam was just around the corner, but he Jam City crew in LCU and the participants pulled it off.Rehearsals were heav </p>
+          <a href="#" class="btn btn-info btn-sm">read more...</a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="videos">
+      <h3>Videos</h3>
+      <iframe width="auto" height="600" src="https://www.youtube.com/embed/c8HW77YEkAE?rel=0&amp;showinfo=0" controls="0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
     <div class="container-fluid">
         <div class="row">
             <!-- content -->
@@ -60,8 +111,8 @@
                 <!-- latest news -->
                 <div class="list-group blocks">
                     <span href="#" class="list-group-item active">
-            <h3 class="list-group-item-heading">Hot News</h3>
-          </span>
+                      <h3 class="list-group-item-heading">Hot News</h3>
+                    </span>
                     <a href="#" class="list-group-item">
                         <img class="img-square col-lg-4" src="http://lorempixel.com/50/50/city" alt="" />
                         <h4 class="list-group-item-heading">Jam City Current Stop</h4>

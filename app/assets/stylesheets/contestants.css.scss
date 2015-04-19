@@ -2,3 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Contestants page
+.pre-contestants {
+  margin-top: -3em;
+  height: 45vh;
+  width: 100%;
+}
+.contestant-list {
+  text-align: center;
+}
+
+.contestant-list li {
+  list-style: none;
+  display: inline-block;
+  padding: auto;
+  margin: 1em;
+  box-shadow: 2px 2px black;
+}
+.contestant-list-text {
+  //  padding: 0.5em;
+}
+.contestant-list li a:hover {
+  text-decoration: none;
+}
+.contestant {
+  width: 200px;
+  height: 270px;
+  background: gray;
+}
+body#contestants-page {
+  background-image: url('ent-contestants.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #555;
+}

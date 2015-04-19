@@ -1,3 +1,36 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel-inner {
+  // @include backgroundImageGradient(top, rgba(2, 4, 27, .1), rgba(2, 6, 9, 0.1) 15%);
+  height: 100%;
+}
+
+.my-row {
+  display: flex;
+
+  & .news {
+    flex: 1 60%;
+    display: flex;
+    flex-direction: column;
+    
+    & .news-item {
+      flex: 1 auto;
+      margin-bottom: 20px;
+
+      & img {
+        @include border_and_shadow;
+      }
+    }
+  }
+  .videos {
+    flex: 1 40%;
+    display: flex;
+    flex-direction: column;
+
+    & iframe {
+      @include border_and_shadow;
+    }
+  }
+}
