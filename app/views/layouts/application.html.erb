@@ -41,20 +41,7 @@
           <li><%= link_to "Photo Gallery", media_path %></li>
           <li><%= link_to "Jam City Tv", tv_path %></li>
           <li><%= link_to "Events", events_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">What is Jam City</a>
-              </li>
-              <li><a href="#">Sponsors</a>
-              </li>
-              <li><a href="#">Contact Us</a>
-              </li>
-              <li class="divider"></li>
-              <li><a href="#">Become a Sponsor</a>
-              </li>
-            </ul>
-          </li>
+          <li><%= link_to "About", about_path %></li>
           <li>
             <% if user_signed_in? %>
               <li class="dropdown">
