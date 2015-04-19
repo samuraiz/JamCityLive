@@ -23,3 +23,58 @@ body#home-page{
     border: 7px solid #fafafa;
     box-shadow: 1px 5px 9px #949494;
 }
+
+.section-title{
+    width: 100%;
+    padding: 3px 3px;
+    padding-left: 15px;
+    border:1px solid #ddd;
+    border-radius: 4px;
+    color: #1f5f89;
+    strong {
+        padding-bottom: 150px; 
+    }
+}
+
+ul.section{
+
+}
+
+.section{
+    width: 100%;
+    list-style: none;
+    padding: 3px 3px;
+    padding-left: 15px;
+    box-shadow: 1px 3px 4px #949494;
+    border-radius: 2px;
+    color: #1f5f89;
+    margin-top: 15px;
+    background-color: whitesmoke;
+}
+
+.fa{
+    color: rgb(95, 191, 96);
+}
+
+.fa.fa-2x{
+    color: rgb(75, 140, 216);
+}
+
+.logo-blue{
+    color: rgb(55, 120, 196);
+    font-weight: 50px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+
+.container.video{
+    background-color: rgb(124, 186, 225);
+    width: 100%;
+    margin: 50px 0px 0px 0px;
+    padding: 50px 0px;
+}
+
+footer{
+    margin-top: -20px;
+}
