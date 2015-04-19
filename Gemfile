@@ -3,8 +3,8 @@ ruby '1.9.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use mysql as the database for Active Record
-gem 'mysql2', '0.3.17',   group: :development
+# Use postgresql as the database for Active Record
+gem 'pg', '0.18.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -59,7 +59,6 @@ gem 'rspec'
 gem 'rspec-rails'
 
 group :production do
-  gem 'pg', '0.18.1'
   gem 'rails_12factor', '0.0.3'
 end
 

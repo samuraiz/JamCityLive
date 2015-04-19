@@ -1,0 +1,14 @@
+<div id='the_modal' class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+  </div>
+  <div class="col-md-6">
+    <%= image_tag @contestant.image.url(:medium) %>
+  </div>
+  <div class="col-md-6">
+    <p><%= @contestant.nickname  %></p>
+    <p><%= @contestant.bio  %></p>
+    <h1><%= @contestant.votes.count  %>&hearts;</h1>
+    <%= link_to 'Vote For This Contestant', (@contestant) %><br>
+  </div>
+</div>

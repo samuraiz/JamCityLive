@@ -9,19 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
   <%=stylesheet_link_tag( 'bootstrap.min', media: 'all', 'data-turbolinks-track'=> true )%>
-    <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
-      <%=csrf_meta_tags %>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
+  <%=csrf_meta_tags %>
 </head>
-
 <body>
-  <!-- NAVBAR -->
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -92,40 +83,33 @@
   <!-- header end -->
 
   <!-- body content -->
-  <%=yield %>
+    <%=yield %>
     <!-- body content end -->
 
-
-    <!-- footer -->
-    <div class="container">
+  <footer>
+    <div class="container text-center">
+      <h1 class="quote">“Think of yourself as a brand. You need to be remembered. What will they remember you for? What defines you? If you have it in you, do something that defines you. Invent something, develop a unique skill, get noticed for something — it creates a talking point.”
+        ― Chris Arnold</h1>
       <div class="row">
-        <div class="col-md-6">
-          <em>©copyright Samurias 2015 all rights reserved</em>
-        </div>
-        <div class="col-md-6">
-          <p class="text-right">
-            <a href="#">
-              <%=image_tag( "social/facebook.png") %>
-            </a>
-            <a href="#">
-              <%=image_tag( "social/twitter.png") %>
-            </a>
-            <a href="#">
-              <%=image_tag( "social/googleplus.png") %>
-            </a>
-            <a href="#">
-              <%=image_tag( "social/youtube.png") %>
-            </a>
-          </p>
-        </div>
+        <em>©copyright Samurias 2015 all rights reserved</em>
+      </div>
+      <div class="row">
+        <p class="text-center">
+          <a href="#">
+            <%=image_tag( "social/facebook.png") %>
+          </a>
+          <a href="#">
+            <%=image_tag( "social/twitter.png") %>
+          </a>
+          <a href="#">
+            <%=image_tag( "social/google_plus.png") %>
+          </a>
+          <a href="#">
+            <%=image_tag( "social/youtube.png") %>
+          </a>
+        </p>
       </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <%=javascript_include_tag( 'jquery.min', 'data-turbolinks-track'=> true) %>
-      <!-- Latest compiled and minified JavaScript -->
-      <%=javascript_include_tag( 'bootstrap.min', 'data-turbolinks-track'=> true) %>
-        <%=javascript_include_tag( 'application', 'data-turbolinks-track'=> true) %>
+  </footer>
 </body>
-
 </html>
-<!-- footer end -->

@@ -15,8 +15,10 @@
  */ 
 
  /*@import style from google fonts*/
+
  @import url(http://fonts.googleapis.com/css?family=Averia+Serif+Libre);
- @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+ @import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic);
+
 
 body {
   background-image: url(image-path('bg.jpg'));
@@ -180,4 +182,12 @@ h1, h2, h3, h4, h5 {
   background: -moz-linear-gradient(#ffffff, #ffffff);
   background: -webkit-linear-gradient(#ffffff, #ffffff);
   background: -o-linear-gradient(#ffffff, #ffffff);
+}
+footer {
+  background-color: #459ED9;
+  .quote {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
 }

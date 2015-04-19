@@ -1,27 +1,32 @@
-<section>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @contestant.name %>
-</p>
+<div id='the_modal' class="modal-content">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+  </div>
+  <section>
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Name:</strong>
+      <%= @contestant.name %>
+    </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @contestant.bio %>
-</p>
+    <p>
+      <strong>Bio:</strong>
+      <%= @contestant.bio %>
+    </p>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @contestant.nickname %>
-</p>
+    <p>
+      <strong>Nickname:</strong>
+      <%= @contestant.nickname %>
+    </p>
 
-<p>
-  <%= image_tag @contestant.image%><br><br>
-  <%= @contestant.image %>
-</p>
+    <p>
+      <%= image_tag @contestant.image%><br><br>
+      <%= @contestant.image %>
+    </p>
 
-  <%= render 'vote' %>
+    <%= render 'vote' %>
 
-<%= link_to 'Edit', edit_contestant_path(@contestant) %> |
-<%= link_to 'Back', contestants_path %>
-</section>
+    <%= link_to 'Edit', edit_contestant_path(@contestant) %> |
+    <%= link_to 'Back', contestants_path %>
+  </section>
+</div>
