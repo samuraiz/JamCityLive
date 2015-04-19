@@ -35,6 +35,8 @@
 $dark_blue: #1F5F89;
 
 /* Import other stylesheets */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "fonts";
 @import "homes";
 @import "modifier";
