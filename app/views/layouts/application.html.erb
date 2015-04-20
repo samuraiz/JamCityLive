@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JamCityLive</title>
   <%=stylesheet_link_tag( 'application', media: 'all', 'data-turbolinks-track'=> true )%>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%=csrf_meta_tags %>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -69,18 +68,18 @@
   <%=yield %>
   <footer>
     <div class="container text-center">
-      <h1 class="quote">“Think of yourself as a brand. You need to be remembered. What will they remember you for? What defines you? If you have it in you, do something that defines you. Invent something, develop a unique skill, get noticed for something — it creates a talking point.”
-        ― Chris Arnold</h1>
-      <div class="row">
-        <em>©copyright Samurias 2015 all rights reserved</em>
-      </div>
-      <div class="row">
+      <h4 class="quote">“Think of yourself as a brand. You need to be remembered. What will they remember you for? What defines you? If you have it in you, do something that defines you. Invent something, develop a unique skill, get noticed for something — it creates a talking point.”
+        ― Chris Arnold</h4>
+      <div class="copy">
         <p class="text-center">
           <%= link_to image_tag( "social/facebook.png"), "https://www.facebook.com/pages/Jam-City-Live/1574478196119697", target: "_blank" %>
           <%= link_to image_tag( "social/twitter.png"), "https://twitter.com/JamCityLive", target: "_blank" %>
           <%= link_to image_tag( "social/google_plus.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
           <%= link_to image_tag( "social/youtube.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
         </p>
+        <div>
+          <em>©copyright Samurias 2015 all rights reserved</em>
+        </div>
       </div>
     </div>
   </footer>

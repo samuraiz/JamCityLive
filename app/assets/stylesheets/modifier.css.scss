@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+.no-float {
+  float: none;
+}
+
 .carousel-control-flex {
   display: flex;
   flex-direction: column-reverse;
