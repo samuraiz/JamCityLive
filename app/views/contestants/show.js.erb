@@ -1,2 +1,4 @@
-$('#the_modal .modal-dialog .modal-content').html("<%= j render 'contestant' %>");
-$('#the_modal').modal();
+$('#myModal .modal-dialog .modal-content').html("<%= j render 'contestant' %>");
+$(window).load(function() {
+  $('#myModal').modal('show');
+})

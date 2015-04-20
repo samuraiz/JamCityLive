@@ -2,17 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Contestants page
-// .pre-contestants {
-//   height: 45vh;
-//   margin-top: -3em;
-//   width: 100%;
-// }
 .contestant-list {
-  text-align: center;
+    text-align: center;
 
   & li {
-    @include border_and_shadow;
+    border: 7px solid rgb(250,250,250);
+    border-radius: 4px;
+    box-shadow: 1px 1px 9px rgb(100,100,100);
     display: inline-block;
     list-style: none;
     margin: 1em;
@@ -26,9 +22,30 @@
 
 .contestant {
   background: gray;
-  height: 270px;
   width: 200px;
+
+  & a {
+  }
 }
+
+.contestant-list-text {
+  background-color: white;
+  border-top: 2px solid $dark_blue;
+  border-bottom: 2px solid $dark_blue;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+
+  & p {
+    flex: 1 50%;
+    font-family: "Arvo", sans-serif;
+
+    &:hover {
+      background-color: rgba(200,200,200, .5)
+    }
+  }
+}
+
 .contestants-page-header {
   @include backgroundImageGradient(url('ent-contestants.jpg'), top, rgba(55, 55, 55, .2), rgba(55, 55, 55, 0.2) 15%);
   background-position: 50% 10%;
@@ -41,6 +58,20 @@
   height: 400px;
   line-height: 1.8em;
 }
-.modal-content {
-  z-index: 2;
+
+.modal {
+  font-size: 1.1em;
+  text-align: left;
+
+  & p {
+    padding-bottom: 20px;
+    & > img {
+      padding-top: 10px;
+    }
+  }
+}
+
+.profile-title {
+  font-size: 1.2em;
+  font-weight: bold;
 }

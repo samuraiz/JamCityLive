@@ -1,0 +1,47 @@
+<div class="modal fade" id="myModal-<%= contestant.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel"><%= contestant.name %></h3>
+      </div>
+      <div class="modal-body">
+          <div>
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+            
+            <span class="profile-title">Bio: </span>
+            <p>
+              <%= contestant.bio %>
+            </p>
+
+            <span class="profile-title">Nickname:</span>
+            <p>
+              <%= contestant.nickname %>
+            </p>
+
+            <span class="profile-title">Pictures:</span>
+            <p>
+              <%= image_tag contestant.image%><br><br>
+            </p>
+
+            <p>
+              <i class="fa fa-heart"></i>
+              <%= "#{contestant.votes.count} Votes" %> 
+            </p>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <%= render 'vote' %>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Edit', edit_contestant_path(contestant) %> |
+        <% end %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

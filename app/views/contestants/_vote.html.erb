@@ -1,10 +1,14 @@
-<% unless @contestant.users.include? current_user %>
+<% if !current_user.present? %>
+  <%= button_to "login to vote", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-connect pull-left"  %>
+<% else %>
+  <% unless (current_user.contestants.present?) %>
     <%= form_for Vote.new do |f| %>
-        <%= hidden_field(:vote, :contestant_id, value: @contestant.id )%>
-        <%= hidden_field(:vote, :user_id, value: current_user.id)%>
-        <div class="row actions text-center">
-          <%= f.submit "Vote", class: "btn btn-primary" %>
-        </div>
-        <br>
+      <%= hidden_field(:vote, :contestant_id, value: @contestant.id )%>
+      <%= hidden_field(:vote, :user_id, value: current_user.id)%>
+      <div class="row actions text-center">
+        <%= f.submit "Vote", class: "btn btn-primary pull-left" %>
+      </div>
+      <br>
     <% end %>
+  <% end %>
 <% end %>

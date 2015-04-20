@@ -12,12 +12,12 @@
   <h3 class="page-header">Meet the Contestants </h3>
   <% @contestants.each do |contestant| %>
       <li>
-        <%= link_to (contestant) do %>
+        <%= link_to (contestant), data: { toggle: "modal", target: "#myModal-#{contestant.id}" } do %>
             <div class="contestant">
               <%= image_tag contestant.image.url(:thumb) %>
               <div class="contestant-list-text">
-                <p class="name"><%= contestant.name  %></p>
-                <p class="">(<%= contestant.nickname %>)</p>
+                <p class="name no-margin"><%= contestant.name  %></p>
+                <p class="no-margin">(<%= contestant.nickname %>)</p>
               </div>
             </div>
         <% end %>
@@ -25,6 +25,7 @@
             <%= link_to 'Edit', edit_contestant_path(contestant), class: "btn btn-default" %>
             <%= link_to 'Destroy', contestant, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+        <%= render 'show', contestant: contestant %>
       </li>
   <% end %>
 </ul>
