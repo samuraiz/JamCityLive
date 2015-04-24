@@ -26,9 +26,17 @@
 
             <span class="profile-title">Pictures:</span>
             <p>
-              <%= image_tag contestant.image%><br><br>
+              <%= image_tag contestant.image.url(:large)%><br><br>
             </p>
-
+            <p>
+              <%= image_tag contestant.image_b.url(:large)%><br><br>
+            </p>
+            <p>
+              <%= image_tag contestant.image_c.url(:large)%><br><br>
+            </p>
+            <p>
+              <%= image_tag contestant.image_d.url(:large)%><br><br>
+            </p>
             <p>
               <i class="fa fa-heart"></i>
               <%= "#{contestant.votes.count} Votes" %> 
