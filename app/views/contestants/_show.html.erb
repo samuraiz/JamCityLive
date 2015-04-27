@@ -13,18 +13,17 @@
             <% if alert %>
               <p class="alert alert-danger"><%= alert %></p>
             <% end %>
-            
-            <span class="profile-title">Bio: </span>
             <p>
+              <span class="profile-title">Bio: </span>
               <%= contestant.bio %>
             </p>
-
-            <span class="profile-title">Nickname:</span>
             <p>
+              <span class="profile-title">Nickname:</span>
               <%= contestant.nickname %>
             </p>
 
             <span class="profile-title">Pictures:</span>
+            <div class="text-center">
             <p>
               <%= image_tag contestant.image.url(:large)%><br><br>
             </p>
@@ -41,6 +40,7 @@
               <i class="fa fa-heart"></i>
               <%= "#{contestant.votes.count} Votes" %> 
             </p>
+            </div>
           </div>
       </div>
       <div class="modal-footer">
@@ -52,7 +52,7 @@
                     <%= hidden_field(:vote, :contestant_id, value: contestant.id )%>
                     <%= hidden_field(:vote, :user_id, value: current_user.id)%>
                     <div class="row actions text-center">
-                      <%= f.submit "Vote", class: "btn btn-primary pull-left" %>
+                      <%= f.submit "Vote", class: "btn btn-primary btn-lg" %>
                     </div>
                     <br>
                 <% end %>
