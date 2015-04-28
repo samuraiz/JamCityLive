@@ -1,0 +1,110 @@
+/* line 1, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+body#home-page {
+  background: url("about-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* line 7, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.carousel-inner {
+  background: none;
+  /*background: url('about-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;*/
+}
+
+/* line 14, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+#about_us {
+  margin-top: 18%;
+}
+
+/* line 18, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.inline {
+  display: inline-block;
+}
+
+/* line 22, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.video-box {
+  border: 7px solid #fafafa;
+  box-shadow: 1px 5px 9px #949494;
+  width: 700px;
+  max-width: 80%;
+  height: 500px;
+}
+
+/* line 30, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.section-title {
+  width: 100%;
+  padding: 3px 3px;
+  padding-left: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #1f5f89;
+}
+/* line 37, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.section-title strong {
+  padding-bottom: 150px;
+}
+
+/* line 46, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.section {
+  width: 100%;
+  list-style: none;
+  padding: 3px 3px;
+  padding-left: 15px;
+  box-shadow: 1px 3px 4px #949494;
+  border-radius: 2px;
+  color: #1f5f89;
+  margin-top: 15px;
+  background-color: whitesmoke;
+}
+
+/* line 58, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.fa {
+  color: #5fbf60;
+}
+
+/* line 62, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.fa.fa-2x {
+  color: #4b8cd8;
+}
+
+/* line 66, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.logo-blue {
+  color: #3778c4;
+  font-weight: 50px;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+/* line 74, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+.container.video {
+  background-color: #7cbae1;
+  width: 100%;
+  margin: 50px 0px 0px 0px;
+  padding: 50px 0px;
+}
+
+/* line 81, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+footer {
+  margin-top: -20px;
+}
+
+@media only screen and (max-width: 1096px) {
+  /* line 87, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+  #about_us {
+    margin-top: 9%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  /* line 93, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+  #about_us {
+    margin-top: -25%;
+  }
+}
+@media only screen and (max-width: 470px) {
+  /* line 99, /Users/dejijaye/workspace/JamCityLive/app/assets/stylesheets/about.css.scss */
+  #about_us {
+    margin-top: -100%;
+  }
+}
