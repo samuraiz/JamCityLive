@@ -1,42 +1,37 @@
-body#home-page{
-     background: url('about-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.carousel-inner{
-    background: none;
-    /*background: url('about-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;*/
+.about-header{
+  background: url('about-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 50%;
+  height: 300px;
 }
 
 #about_us{
-    margin-top: 18%;
+  margin-top: 18%;
 }
 
 .inline{
-    display: inline-block;
+  display: inline-block;
 }
 
 .video-box{
-    border: 7px solid #fafafa;
-    box-shadow: 1px 5px 9px #949494;
-    width:700px;
-    max-width: 80%;
-    height:500px;
+  border: 7px solid #fafafa;
+  box-shadow: 1px 5px 9px #949494;
+  width:700px;
+  max-width: 80%;
+  height:500px;
 }
 
 .section-title{
-    width: 100%;
-    padding: 3px 3px;
-    padding-left: 15px;
-    border:1px solid #ddd;
-    border-radius: 4px;
-    color: #1f5f89;
-    strong {
-        padding-bottom: 150px; 
-    }
+  width: 100%;
+  padding: 3px 3px;
+  padding-left: 15px;
+  border:1px solid #ddd;
+  border-radius: 4px;
+  color: #1f5f89;
+  strong {
+    padding-bottom: 150px; 
+  }
 }
 
 ul.section{
@@ -44,59 +39,42 @@ ul.section{
 }
 
 .section{
-    width: 100%;
-    list-style: none;
-    padding: 3px 3px;
-    padding-left: 15px;
-    box-shadow: 1px 3px 4px #949494;
-    border-radius: 2px;
-    color: #1f5f89;
-    margin-top: 15px;
-    background-color: whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  box-shadow: 1px 3px 4px #949494;
+  color: #1f5f89;
+  list-style: none;
+  margin-top: 15px;
+  padding: 3px 3px 3px 15px;
+  width: 100%;
 }
 
 .fa{
-    color: rgb(95, 191, 96);
+  color: rgb(95, 191, 96);
 }
 
 .fa.fa-2x{
-    color: rgb(75, 140, 216);
+  color: rgb(75, 140, 216);
 }
 
 .logo-blue{
-    color: rgb(55, 120, 196);
-    font-weight: 50px;
-    font-size: 2em;
-    font-weight: bolder;
+  color: rgb(55, 120, 196);
+  font-weight: 50px;
+  font-size: 2em;
+  font-weight: bolder;
 }
 
 
-.container.video{
-    background-color: rgb(124, 186, 225);
-    width: 100%;
-    margin: 50px 0px 0px 0px;
-    padding: 50px 0px;
-}
-
-footer{
-    margin-top: -20px;
+.video{
+  background-color: rgb(124, 186, 225);
+  width: 100%;
+  margin: 50px 0px 0px 0px;
+  padding: 50px 0px;
 }
 
 
 @media only screen and (max-width:1096px){
-    #about_us{
-        margin-top: 9%;
-    }    
-}
-
-@media only screen and (max-width:800px){
-    #about_us{
-        margin-top: -25%;
-    }    
-}
-
-@media only screen and (max-width:470px){
-    #about_us{
-        margin-top: -100%;
-    }    
+  #about_us{
+    margin-top: 9%;
+  }    
 }

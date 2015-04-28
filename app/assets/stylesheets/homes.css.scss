@@ -5,28 +5,38 @@
 .carousel-inner {
   @include backgroundImageGradient(top, rgba(2, 4, 27, .1), rgba(2, 6, 9, 0.1) 15%);
   height: 100%;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 100px;
+  }
 }
 
 .my-row {
   display: flex;
 
   & .news {
-    flex: 1 60%;
+    flex: 2;
     display: flex;
     flex-direction: column;
     
     & .news-item {
-      flex: 1 auto;
+      // display: flex;
       margin-bottom: 20px;
 
       & img {
         @include border_and_shadow;
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      & div {
+        flex: 2;
       }
     }
   }
   .videos {
     display: flex;
-    flex: 1 40%;
+    flex: 1;
     flex-direction: column;
 
     & .video-container {
@@ -48,7 +58,9 @@
         height: 350px ;
       }
     }
+  }
 
-
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }

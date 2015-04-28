@@ -1,19 +1,20 @@
-.background-img{
+.timeline-header{
   background: url('event-bg.jpg');
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-}
+  height: 300px;
+  padding-top: 200px;
 
-.tm-container {
-  margin-top: 200px !important;
-}
-
-#timeline {
-    color: #f5f5f5;
+  & h1 {
+    color: white;
+    padding-left: 30px;
+  }
 }
 
 .timeline {
+    float: none;
+    margin: 0 auto;
     list-style: none;
     padding: 20px 0 20px;
     position: relative;
