@@ -9,7 +9,7 @@
 
 </div>
 <ul class="contestant-list no-padding">
-  <h3 class="page-header">Meet the Contestants </h3>
+  <h3 class="page-header">Meet the Participants </h3>
   <% @contestants.each do |contestant| %>
       <li>
         <%= link_to (contestant), data: { toggle: "modal", target: "#myModal-#{contestant.id}" } do %>
