@@ -2,19 +2,16 @@ Rails.application.routes.draw do
 
   root 'homes#show'
 
+  resources :galleries
+  resources :tvs
   resources :contestants
   resources :votes
-
   resources :posts
-
   resources :media
-
   resource :dashboard
 
   # resources :events
   get 'events',to: 'events#show', as: :events
-
-  get 'tv',to: 'tv#show', as: :tv
 
   get 'about',to: 'about#show', as: :about
 
