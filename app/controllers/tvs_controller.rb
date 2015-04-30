@@ -45,6 +45,6 @@ class TvsController < ApplicationController
     end
 
     def tv_params
-      params.require(:tv).permit(:title, :video)
+      params.require(:tv).permit(:title, :youtube_id)
     end
 end
