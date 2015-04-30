@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20150430013048) do
     t.string   "image_d"
   end
 
+  create_table "event_votes", force: true do |t|
+    t.integer  "user_id"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_votes", ["user_id"], name: "index_event_votes_on_user_id", using: :btree
+
   create_table "galleries", force: true do |t|
     t.text     "title"
     t.string   "image"

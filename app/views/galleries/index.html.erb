@@ -1,27 +1,29 @@
-<h1>Listing galleries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<!-- header -->
+  <div class="timeline-header">
+    <h1 id="timeline">Jam City Gallery</h1>
+  </div>
+  <div class="container-fluid">
+  <ul class="gallery-thumbnail-wrapper">
     <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.title %></td>
-        <td><%= gallery.image %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <a class="img-link" href="">
+      <img class="img-responsive img-square col-lg-2 no-padding" src="<%= gallery.image.url %>" alt="" />
+      </a>
+      </li>
+      <% if current_user.try(:admin?) %>
+        <%= link_to 'Edit', edit_gallery_path(gallery) %>
+        <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
 
-<br>
+<div class="overflow"></div>
+<% if current_user.try(:admin?) %>
 
-<%= link_to 'New Gallery', new_gallery_path %>
+  <%= link_to 'New Gallery', new_gallery_path %>
+<% end %>
+
+<% content_for :view_js do %>
+  <%= javascript_include_tag( 'galleries') %>
+<%end%>
