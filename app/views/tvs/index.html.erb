@@ -1,14 +1,25 @@
 <div class="timeline-header">
   <h1 id="timeline">Jam City Tv</h1>
 </div>
-<% @tvs.each do |tv| %>
-    <p><%= tv.title %></p>
-    <p><%= tv.youtube_id %></p>
-    <% if current_user.try(:admin?) %>
-        <p><%= link_to 'Edit', edit_tv_path(tv) %></p>
-        <p><%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <% end %>
-<% end %>
+<ul class="text-center tv">
+  <% @tvs.each do |tv| %>
+      <li class="tv-list">
+        <%= link_to (tv), data: { toggle: "modal", target: "#myModal-#{tv.id}" } do %>
+            <div>
+              <p><%= tv.title %></p>
+            </div>
+            <div>
+              <%= image_tag("http://img.youtube.com/vi/#{tv.youtube_id}/maxresdefault.jpg", size: "350x250") %>
+            </div>
+        <% end %>
+        <% if current_user.try(:admin?) %>
+            <p><%= link_to 'Edit', edit_tv_path(tv), class: "btn btn-default" %>
+              <%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></p>
+        <% end %>
+        <%= render 'show', tv: tv %>
+      </li>
+  <% end %>
+</ul>
 <br>
 <% if current_user.try(:admin?) %>
     <%= link_to 'New Tv', new_tv_path, class: "btn btn-default" %>
