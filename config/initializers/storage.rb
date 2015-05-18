@@ -5,6 +5,6 @@ CarrierWave.configure do |config|
       aws_access_key_id:     ENV["AWS_ACCESS_ID"],
       aws_secret_access_key: ENV["AWS_ACCESS_SECRET_KEY"]
   }
-  config.fog_directory  = "andela-ratsi"
+  config.fog_directory  = "jamcity"
   config.fog_public     = false
 end
