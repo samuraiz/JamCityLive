@@ -7,7 +7,7 @@ class AboutController < ApplicationController
     @client = Google::APIClient.new(:application_name => "jamcity",:application_version => "0.1")
   end
 
-  #sample codes for google drive
+  #sample codes for google drive: this just to push
   def print_file(client, file_id)
     drive = client.discovered_api('drive', 'v2')
     result = client.execute(
