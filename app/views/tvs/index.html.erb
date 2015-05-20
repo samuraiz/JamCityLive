@@ -9,7 +9,7 @@
               <p><%= tv.title %></p>
             </div>
             <div>
-              <%= image_tag("http://img.youtube.com/vi/#{tv.youtube_id}/maxresdefault.jpg", size: "350x250") %>
+              <%= image_tag("http://img.youtube.com/vi/#{tv.youtube_id}/mqdefault.jpg", size: "350x250") %>
             </div>
         <% end %>
         <% if current_user.try(:admin?) %>
