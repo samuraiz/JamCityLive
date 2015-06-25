@@ -14,10 +14,13 @@ class GalleriesController < ApplicationController
   end
 
   def show
+    # @gallery = Gallery.find(params[:id])
+    @photos = @gallery.photos.all
   end
 
   def new
     @gallery = Gallery.new
+    @photo = @gallery.photos.build
   end
 
   def edit
@@ -25,13 +28,31 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = Gallery.new(gallery_params)
-    @gallery.save
-    redirect_to galleries_path
+    if @gallery.save
+      # if params[:images]
+        params[:photos]['image'].each do |image|
+          @photo = @gallery.photos.create!(:image => image, :gallery_id => @gallery.id)
+        end
+      # end
+      redirect_to galleries_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
+    end
   end
 
   def update
-    @gallery.update(gallery_params)
-    redirect_to galleries_path
+    if @gallery.update(gallery_params)
+      if params[:images]
+        params[:images].each { |image|
+          @gallery.photos.create(image: image)
+        }
+      end
+      redirect_to galleries_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :edit
+    end
   end
 
   def destroy
@@ -45,6 +66,6 @@ class GalleriesController < ApplicationController
     end
 
     def gallery_params
-      params.require(:gallery).permit(:title, :image)
+      params.require(:gallery).permit(:title, photos_attibutes: [:id, :gallery_id, :image])
     end
 end

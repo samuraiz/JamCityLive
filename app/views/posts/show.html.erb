@@ -1,24 +1,24 @@
+<div class="timeline-header">
+  <h1 id="timeline">'Sup Jam City</h1>
+</div>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= @post.title %>
-</p>
-
+</h2>
+<br>
 <p>
-  <strong>Content:</strong>
   <%= @post.content %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
-  <%= @post.comment %>
+  <%=image_tag (@post.image.url(:large)) %>
 </p>
 
-<p>
-  <strong>Pic art:</strong>
-  <%= @post.pic_art %>
-</p>
+<!--<p id="comment">-->
+  <!--<strong>Comment:</strong>-->
+  <!--<#3%= render :partial => @post.comment %>-->
+<!--</p>-->
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

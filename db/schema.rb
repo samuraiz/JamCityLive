@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430013048) do
+ActiveRecord::Schema.define(version: 20150623045926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,18 +50,8 @@ ActiveRecord::Schema.define(version: 20150430013048) do
     t.string   "image_d"
   end
 
-  create_table "event_votes", force: true do |t|
-    t.integer  "user_id"
-    t.string   "location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "event_votes", ["user_id"], name: "index_event_votes_on_user_id", using: :btree
-
   create_table "galleries", force: true do |t|
     t.text     "title"
-    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,11 +75,21 @@ ActiveRecord::Schema.define(version: 20150430013048) do
     t.datetime "updated_at"
   end
 
+  create_table "photos", force: true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.integer  "gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id", using: :btree
+
   create_table "posts", force: true do |t|
     t.text     "title"
     t.text     "content"
     t.integer  "comment_id"
-    t.string   "pic_art"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

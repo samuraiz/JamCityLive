@@ -1,4 +1,4 @@
 class EventsController < ApplicationController
-  def show
+  def list
   end
 end

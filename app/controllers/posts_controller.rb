@@ -26,15 +26,21 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
+    if @post.save
+      flash[:success] = "Post successfully created!"
+      redirect_to posts_path
+    end
+
   end
 
   def update
     @post.update(post_params)
+    redirect_to posts_path
   end
 
   def destroy
     @post.destroy
+    redirect_to posts_path
   end
 
   private
@@ -43,6 +49,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :comment_id, :pic_art)
+      params.require(:post).permit(:title, :content, :image)
     end
 end

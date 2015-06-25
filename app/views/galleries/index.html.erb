@@ -7,10 +7,10 @@
     <% @galleries.each do |gallery| %>
       <li>
         <a class="img-link" href="">
-      <img class="img-responsive img-square col-lg-2 no-padding" src="<%= gallery.image.url %>" alt="" />
       </a>
       </li>
       <% if current_user.try(:admin?) %>
+            <%= link_to 'View', gallery %>
         <%= link_to 'Edit', edit_gallery_path(gallery) %>
         <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>

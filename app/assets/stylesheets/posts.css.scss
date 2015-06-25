@@ -1,3 +1,32 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.timeline-header{
+  background: url('event-bg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  padding-top: 200px;
+
+  & h1 {
+    color: white;
+    padding-left: 30px;
+  }
+}
+
+.jumbotron{
+  background-color: white;
+}
+
+//.post-title{
+//  font-family: "Arvo", Serif;
+////  margin: 20px 0px 20px;
+//}
+//
+//.media-object{
+//  margin: 50px auto 100px;
+//}
+//p.post-content{
+//  margin: 20px 0px 20px;
+//}

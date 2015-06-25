@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   resources :votes
   resources :posts
   resources :media
+  resources :photos
   resource :dashboard
 
   # resources :events
-  get 'events',to: 'events#show', as: :events
+  get 'events',to: 'events#list', as: :events
 
   get 'about',to: 'about#show', as: :about
 
