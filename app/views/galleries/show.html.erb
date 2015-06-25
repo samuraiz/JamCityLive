@@ -1,16 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @gallery.title %>
-</p>
+<!-- header -->
+<div class="timeline-header">
+  <h1 id="timeline">Jam City Gallery</h1>
+</div>
+<div class="container-fluid">
+  <div class="title"><h3><%= @gallery.title %></h3></div>
+  <ul class="gallery-thumbnail-wrapper">
+    <% @gallery.photos.each do |photo| %>
+        <li>
+          <a class="img-link" href="">
+            <img class="img-responsive img-square col-lg-2 no-padding" src="<%= photo.image.url %>" alt="" />
+          </a>
+        </li>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Edit', edit_gallery_path(photo) %>
+            <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    <% end %>
+  </ul>
+</div>
 
-<p>
-  <% @photos.each do |p| %>
-      <%= image_tag p.image_url %>
-      <%= link_to "Edit Image", edit_photo_path(p) %>
-  <% end %>
-</p>
+<div class="overflow"></div>
+<% if current_user.try(:admin?) %>
 
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+    <%= link_to 'New Gallery', new_gallery_path %>
+<% end %>
 <%= link_to 'Back', galleries_path %>
+
+<% content_for :view_js do %>
+    <%= javascript_include_tag( 'galleries') %>
+<%end%>
+
