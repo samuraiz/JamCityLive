@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :tvs
   resources :contestants
   resources :votes
-  resources :posts
+  resources :posts do
+    resources :comments, :only => [:create]
+  end
   resources :media
   resources :photos
   resource :dashboard

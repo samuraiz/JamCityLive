@@ -57,6 +57,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
 
+# Social media share
+gem 'social-share-button'
+
 # Use google api client to access google drive files
 gem 'google-api-client', '~> 0.7.1',  :require => 'google/api_client'
 

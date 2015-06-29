@@ -14,6 +14,7 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photos = Photo.all
   end
   #
   def new
@@ -33,17 +34,18 @@ class PhotosController < ApplicationController
 
   def update
     @photo.update(photo_params)
-    redirect_to photos_path
+    redirect_to gallery_path
   end
 
   def destroy
     @photo.destroy
-    # redirect_to photos_path
+    redirect_to gallery_path
   end
   #
   private
   def set_photo
-    @photo = Photo.find(params[:id])
+    @photo = Gallery.find(params[:id])
+    @photo = @gallery.photos.find(params[:id])
   end
 
   def photo_params

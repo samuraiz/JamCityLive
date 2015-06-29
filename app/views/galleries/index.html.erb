@@ -1,18 +1,19 @@
 <!-- header -->
-  <div class="timeline-header">
-    <h1 id="timeline">Jam City Gallery</h1>
-  </div>
-  <div class="container-fluid">
-  <ul class="gallery-thumbnail-wrapper">
+<div class="timeline-header">
+  <h1 id="timeline">Jam City Gallery</h1>
+</div>
+<div class="container-fluid gallery-list">
+  <h3>Jam City Events</h3>
+  <ul class="list-group">
     <% @galleries.each do |gallery| %>
-      <li>
-        <a class="img-link" href="">
-      <h3><%= link_to gallery.title, gallery %></h3>
-      </a>
-      </li>
-      <% if current_user.try(:admin?) %>
-        <%= link_to 'Edit', edit_gallery_path(gallery) %>
-        <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <li class="gallery-list-item">
+          <a class="img-link" href="">
+            <h3><%= link_to gallery.title, gallery %></h3>
+          </a>
+        </li>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Edit', edit_gallery_path(gallery) %>
+            <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
     <% end %>
   </ul>
@@ -21,10 +22,10 @@
 <div class="overflow"></div>
 <% if current_user.try(:admin?) %>
 
-  <%= link_to 'New Gallery', new_gallery_path %>
+    <%= link_to 'New Gallery', new_gallery_path %>
 <% end %>
 
 
 <% content_for :view_js do %>
-  <%= javascript_include_tag( 'galleries') %>
+    <%= javascript_include_tag( 'galleries') %>
 <%end%>

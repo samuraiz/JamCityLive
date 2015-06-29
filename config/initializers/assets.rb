@@ -12,4 +12,6 @@ Rails.application.config.assets.precompile += %w( bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( jquery.min.js )
 Rails.application.config.assets.precompile += %w( application.css )
 Rails.application.config.assets.precompile += %w( galleries.js )
+Rails.application.config.assets.precompile += %w( social-share-button.js )
+# Rails.application.config.assets.precompile += %w( social-share-button.css.scss )
 

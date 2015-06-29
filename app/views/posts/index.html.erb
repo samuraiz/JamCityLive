@@ -10,14 +10,13 @@
             <img class="media-object img-responsive col-sm-3" src="<%= post.image.url %>" >
           </a>
         </div>
-        <div class="media-body media-left">
+        <div class="media-body">
           <h4 class="media-heading"><%= post.title %></h4>
           <p><%= post.content %></p>
         </div>
       </div>
-      <%= link_to post.title, tvs_path %>
+      <%= link_to 'View in full', post %>
       <% if current_user.try(:admin?) %>
-          <%= link_to 'Show', post %>
           <%= link_to 'Edit', edit_post_path(post) %>
           <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'} %>
 
@@ -30,5 +29,9 @@
 <% if current_user.try(:admin?) %>
     <%= link_to 'New Post', new_post_path %>
 <% end %>
+
+<% content_for :share_js do %>
+    <%= javascript_include_tag('social-share-button') %>
+<%end%>
 
 

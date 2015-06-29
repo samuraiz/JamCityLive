@@ -13,6 +13,7 @@
             </div>
         <% end %>
         <% if current_user.try(:admin?) %>
+            <%= social_share_button_tag(tv.title, :url => "http://myapp.com/foo/bar") %>
             <p><%= link_to 'Edit', edit_tv_path(tv), class: "btn btn-default" %>
               <%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></p>
         <% end %>
@@ -24,3 +25,7 @@
 <% if current_user.try(:admin?) %>
     <%= link_to 'New Tv', new_tv_path, class: "btn btn-default" %>
 <% end %>
+
+<% content_for :share_js do %>
+    <%= javascript_include_tag('social-share-button') %>
+<%end%>
