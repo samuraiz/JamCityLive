@@ -13,7 +13,7 @@
             </div>
         <% end %>
         <% if current_user.try(:admin?) %>
-            <%= social_share_button_tag(tv.title, :url => "http://myapp.com/foo/bar") %>
+            <%= social_share_button_tag(tv.title) %>
             <p><%= link_to 'Edit', edit_tv_path(tv), class: "btn btn-default" %>
               <%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></p>
         <% end %>

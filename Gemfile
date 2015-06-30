@@ -60,6 +60,10 @@ gem 'omniauth-openid'
 # Social media share
 gem 'social-share-button'
 
+# Increase timeout for s3/heroku image upload
+# gem 'delayed_job_active_record'
+
+
 # Use google api client to access google drive files
 gem 'google-api-client', '~> 0.7.1',  :require => 'google/api_client'
 
