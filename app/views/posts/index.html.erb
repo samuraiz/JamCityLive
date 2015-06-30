@@ -12,7 +12,7 @@
         </div>
         <div class="media-body">
           <h4 class="media-heading"><%= post.title %></h4>
-          <p><%= post.content %></p>
+          <p><%= post.content.truncate(300) %></p>
         </div>
       </div>
       <%= link_to 'View in full', post %>
