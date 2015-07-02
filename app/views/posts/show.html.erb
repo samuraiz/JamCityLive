@@ -13,7 +13,7 @@
   </p>
 
   <p>
-    <%=image_tag (@post.image.url(:large)) %>
+    <img class="img-responsive" src="<%= @post.image.url %>" />
   </p>
     Share via: <%= social_share_button_tag(@post.title) %>
   <% if current_user.try(:admin?) %>
@@ -27,6 +27,8 @@
 <% content_for :share_js do %>
     <%= javascript_include_tag('social-share-button') %>
 <%end%>
+
+<%= link_to 'Back', galleries_path %>
 
 <!--<%# if !@post.comments.empty? %>-->
 <!--<h2>Comments</h2>-->

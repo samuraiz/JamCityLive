@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     if @comment.save
       redirect_to @post
-      flash[:notice] = "Comment added"
+      flash.now[:notice] = "Comment added"
     else
       flash.now[:danger] = "error"
     end

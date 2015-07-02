@@ -36,7 +36,7 @@ class GalleriesController < ApplicationController
       # end
       redirect_to galleries_path
     else
-      flash[:alert] = "Something went wrong."
+      flash.now[:alert] = "Something went wrong."
       render :new
     end
   end
@@ -50,7 +50,7 @@ class GalleriesController < ApplicationController
       end
       redirect_to galleries_path
     else
-      flash[:alert] = "Something went wrong."
+      flash.now[:alert] = "Something went wrong."
       render :edit
     end
   end
