@@ -8,7 +8,7 @@
     <% @galleries.each do |gallery| %>
         <li class="gallery-list-item">
           <a class="img-link" href="">
-            <h3><%= link_to gallery.title, gallery %></h3>
+            <p><%= link_to gallery.title, gallery %></p>
           </a>
         </li>
         <% if current_user.try(:admin?) %>
