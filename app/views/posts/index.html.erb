@@ -1,9 +1,9 @@
 <div class="timeline-header">
   <h1 id="timeline">'Sup Jam City</h1>
 </div>
-
+<div class="jumbotron">
   <% @posts.each do |post| %>
-    <div class="jumbotron contestant-list">
+      <div class="container-fluid">
       <div class="row media">
         <div class="media-left">
           <a href="#">
@@ -13,17 +13,19 @@
         <div class="media-body">
           <h4 class="media-heading"><%= post.title %></h4>
           <p><%= post.content.truncate(300) %></p>
+          <%= link_to 'View in full', post %>
+          <br>
         </div>
       </div>
-      <%= link_to 'View in full', post %>
+      </div>
+      <br><br>
       <% if current_user.try(:admin?) %>
           <%= link_to 'Edit', edit_post_path(post) %>
           <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'} %>
 
       <% end %>
-    </div>
   <% end %>
-
+</div>
 
 <div class="overflow"></div>
 <% if current_user.try(:admin?) %>
