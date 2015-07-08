@@ -39,6 +39,7 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Festival", festivals_path %></li>
           <li><%= link_to "Participants", contestants_path %></li>
           <li><%= link_to "Events", events_path %></li>
           <li class="dropdown">
@@ -105,6 +106,7 @@
   <%= javascript_include_tag( 'application') %>  
   <%=yield :view_js%>
   <%=yield :share_js%>
+<%= yield :festival_js %>
 </body>
 
 </html>

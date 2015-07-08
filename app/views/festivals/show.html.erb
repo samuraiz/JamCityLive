@@ -1,0 +1,39 @@
+<div class="cover-img">
+  <div class="container-fluid">
+    <div class="content">
+      <h4>
+        Countdown to Jam City Festival 2015
+      </h4>
+      <h1 id="countdown-holder"></h1> <br>
+      <h4>
+        Date:
+      </h4>
+      <h4>
+        August 13th - 16th, 2015.
+      </h4>
+      <br>
+      <h4>
+        Venue:
+      </h4>
+      <h4>
+        Lead City University, Ibadan.
+      </h4>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+    var clock = document.getElementById("countdown-holder")
+            , targetDate = new Date(2015, 07, 13); // Jan 1, 2050;
+
+    clock.innerHTML = countdown(targetDate).toString();
+    setInterval(function(){
+        clock.innerHTML = countdown(targetDate).toString();
+    }, 1000);
+</script>
+
+<% content_for :festival_js do %>
+    <%= javascript_include_tag( 'countdown') %>
+<%end%>
