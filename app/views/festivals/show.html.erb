@@ -28,7 +28,7 @@
             , targetDate = new Date(2015, 07, 13); // Jan 1, 2050;
 
     clock.innerHTML = countdown(targetDate).toString();
-    setInterval(function(){
+    setTimeout(function(){
         clock.innerHTML = countdown(targetDate).toString();
     }, 1000);
 </script>
