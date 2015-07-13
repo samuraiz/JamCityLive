@@ -4,7 +4,7 @@
 <div class="col-lg-11 content-container">
   <h2>
     <%= @post.title %>
-  </h2>
+  </h2><hr>
   <br>
   <p>
     <%= @post.content %>
@@ -19,6 +19,46 @@
         <%= link_to 'Edit', edit_post_path(@post) %> |
         <%= link_to 'Back', posts_path %>
     </div>
+  <% end %>
+
+  <% if !@post.comments.empty? %>
+    <strong>Comments</strong>
+    <% @post.comments.each do |comment| %>
+      <div>
+        <p>
+          <%= comment.content %>
+        </p>
+        <em>
+          <%= time_ago_in_words(comment.created_at) %>
+          ago by
+          <%= comment.user %>
+        </em>
+        <% if current_user.try(:admin?) %>
+            <%= link_to 'Destroy',[@post, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
+        <% end %>
+      </div><br>
+    <% end %>
+  <% end %>
+
+  <% if !current_user.present? %>
+      <p><%= link_to "login to comment", user_omniauth_authorize_path(:facebook) %></p>
+  <% else %>
+      <% if flash[:danger] %>
+          <div class="notice"><%= flash[:danger] %></div>
+      <% end %>
+  <%= form_for [@post, Comment.new] do |f| %>
+    <p>
+      <%= f.label :content, "Add a comment" %>
+    </p>
+      <br>
+      <p>
+        <%= f.text_area :content %>
+      </p>
+      <br>
+      <p>
+        <%= f.submit "Post Comment" %>
+      </p>
+  <% end %>
   <% end %>
 </div>
 

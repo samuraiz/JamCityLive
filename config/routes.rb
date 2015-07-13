@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :contestants
   resources :votes
   resources :posts do
-    resources :comments, :only => [:create]
+    resources :comments, only: [:create, :destroy]
   end
+  # resources :comments
   resources :media
   resources :photos
   resource :dashboard
