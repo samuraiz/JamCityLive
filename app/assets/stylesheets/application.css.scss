@@ -85,7 +85,7 @@ h4 {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 9999;
 
   & .logo {
     left: 120px;
@@ -235,9 +235,11 @@ h4 {
 }
 
 footer {
+  position: relative;
   color: white;
   background-color: #1F5F89;
   font-family: 'Lato', sans-serif;
+  z-index: 999;
   .quote {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
