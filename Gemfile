@@ -58,7 +58,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-openid'
 
 # Social media share
-gem 'social-share-button'
+gem 'social-share-button', '~> 0.1.8', git: 'https://github.com/cuterxy/social-share-button.git'
 
 # Increase timeout for s3/heroku image upload
 # gem 'delayed_job_active_record'

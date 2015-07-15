@@ -7,6 +7,14 @@ GIT
       activerecord (>= 4.0.0, < 5)
       railties (>= 4.0.0, < 5)
 
+GIT
+  remote: https://github.com/cuterxy/social-share-button.git
+  revision: 35e1920af4ae6eeb91bed0eaa8da625f236aee54
+  specs:
+    social-share-button (0.1.9)
+      coffee-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -313,9 +321,6 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
-    social-share-button (0.1.8)
-      coffee-rails
-      sass-rails
     spring (1.3.6)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -369,7 +374,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  social-share-button
+  social-share-button (~> 0.1.8)!
   spring
   turbolinks
   uglifier (>= 1.3.0)
