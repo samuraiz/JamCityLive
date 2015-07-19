@@ -76,7 +76,7 @@
   /** Pad the lightbox image */
   max-width: 90%;
   max-height: 80%;
-  margin-top: 6%;
+  margin-top: 10%;
 }
 
 .lightbox img.gallery-large{
@@ -102,4 +102,15 @@
 
   /** Unhide lightbox **/
   display: block;
+}
+
+@media only screen and (max-width: 768px){
+
+  .lightbox img{
+    margin-top: 40%;
+  }
+
+  .gallery-thumbnail-wrapper li a img{
+    height: 80px
+  }
 }
