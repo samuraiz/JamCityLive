@@ -8,7 +8,7 @@
       <div class="modal-body">
         <div>
           <div class="text-center">
-            <div>
+            <div class="video-container">
               <iframe class="embed-responsive-item" width="800" height="500" src="http://www.youtube.com/embed/<%= tv.youtube_id %>" frameborder="0" allowfullscreen>
               </iframe>
             </div>
@@ -16,7 +16,6 @@
         </div>
       </div>
       <div class="modal-footer">
-        <%= social_share_button_tag(tv.title, :popup => true, via: "JamCityLive") %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
