@@ -43,6 +43,7 @@
       display: flex;
       flex: 1 50%;
       flex-direction: column;
+      padding-bottom: 90.25%;
 
       & iframe {
         @include border_and_shadow;
