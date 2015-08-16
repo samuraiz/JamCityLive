@@ -324,6 +324,15 @@ p .alert {
   width: 200px;
 }
 
+.max-height {
+  max-height: 100px;
+  padding: 10px;
+}
+
+#sponsors {
+  margin-top: 40px;
+}
+
 // Media Queries
 @media only screen and ( max-width: 768) {
 

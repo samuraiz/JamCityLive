@@ -39,7 +39,16 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Festival", festivals_path %></li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" data-target="dropdown-menu" role="button" aria-expanded="false" class="dropdown-toggle">
+              Festival
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Activities", festivals_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "General Info", festivals_path %></li>
+            </ul>
+          </li>
           <li><%= link_to "Participants", contestants_path %></li>
           <li><%= link_to "Events", events_path %></li>
           <li class="dropdown">
@@ -90,6 +99,15 @@
     <div class="container text-center myfoot">
       <h4 class="quote">“Think of yourself as a brand. You need to be remembered. What will they remember you for? What defines you? If you have it in you, do something that defines you. Invent something, develop a unique skill, get noticed for something — it creates a talking point.”
         ― Chris Arnold</h4>
+      <div id="sponsors">
+        <div>
+          <em class="text-center">Powered By:</em>
+        </div>
+        <p class="text-center">
+          <%= link_to image_tag("lcu_logo(4).jpg", class: "max-height") %>
+          <%= link_to image_tag("Sterling-Bank-logo.png", class: "max-height") %>
+        </p>
+      </div>
       <div class="copy">
         <p class="text-center">
           <%= link_to image_tag("social/Facebook.png"), "https://www.facebook.com/pages/Jam-City-Live/1574478196119697", target: "_blank" %>
