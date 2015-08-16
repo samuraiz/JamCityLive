@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # resources :events
   get 'events',to: 'events#list', as: :events
   get 'festivals',to: 'festivals#show', as: :festivals
+  get 'registrations',to: 'registrations#show', as: :registrations
 
   get 'about',to: 'about#show', as: :about
 
