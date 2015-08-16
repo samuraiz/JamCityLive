@@ -18,7 +18,7 @@
         <% end %>
     <% end %>
   </ul>
-  Share via: <%= social_share_button_tag(@gallery.title, :via => "JamCityLive") %>
+  Share via: <%= social_share_button_tag(@gallery.title, :url => request.original_url, :via => "JamCityLive") %>
 </div>
 
 <div class="overflow"></div>

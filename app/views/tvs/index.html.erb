@@ -3,7 +3,7 @@
 </div>
 <ul class="text-center tv">
   <% @tvs.each do |tv| %>
-      <li class="tv-list">
+      <li class="tv-list" id=<%= tv.to_param %>>
         <%= link_to (tv), data: { toggle: "modal", target: "#myModal-#{tv.id}" } do %>
             <div>
               <p><%= tv.title %></p>
@@ -12,8 +12,9 @@
               <%= image_tag("http://img.youtube.com/vi/#{tv.youtube_id}/mqdefault.jpg", size: "350x250") %>
             </div>
         <% end %>
+        <%= social_share_button_tag(tv.title,:url => request.original_url, via: "JamCityLive") %>
         <% if current_user.try(:admin?) %>
-            <%= social_share_button_tag(tv.title) %>
+
             <p><%= link_to 'Edit', edit_tv_path(tv), class: "btn btn-default" %>
               <%= link_to 'Destroy', tv, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></p>
         <% end %>

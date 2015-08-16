@@ -44,8 +44,6 @@
               Festival
               <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Activities", festivals_path %></li>
-              <li class="divider"></li>
               <li><%= link_to "General Info", festivals_path %></li>
               <li class="divider"></li>
               <li><%= link_to "Register", registrations_path %></li>
@@ -106,23 +104,22 @@
           <em class="text-center">Powered By:</em>
         </div>
         <p class="text-center">
-          <%= link_to image_tag("lcu_logo(4).jpg", class: "max-height") %>
-          <%= link_to image_tag("Sterling-Bank-logo.png", class: "max-height") %>
+          <%= link_to image_tag("lcu_logo(4).jpg", class: "max-height"), "http://www.lcu.edu.ng/", target: "_blank" %>
+          <%= link_to image_tag("Sterling-Bank-logo.png", class: "max-height"),"https://www.sterlingbankng.com/", target: "_blank" %>
         </p>
         <div>
           <em class="text-center">Supported By:</em>
         </div>
         <p class="text-center">
-          <%= link_to image_tag("etisalat-logo.jpg", class: "max-height") %>
-          <%= link_to image_tag("coca_cola_logo.jpg", class: "max-height") %>
-          <%= link_to image_tag("guiness.png", class: "max-height") %>
+          <%= link_to image_tag("etisalat-logo.jpg", class: "max-height"), "http://www.etisalat.com.ng/", target: "_blank"%>
+          <%= link_to image_tag("coca_cola_logo.jpg", class: "max-height"), "http://www.coca-cola.com/ng/pages/landing/index.html", target: "_blank" %>
+          <%= link_to image_tag("guiness.png", class: "max-height"),"https://www.guinness-nigeria.com.", target: "_blank"%>
         </p>
       </div>
       <div class="copy">
         <p class="text-center">
           <%= link_to image_tag("social/Facebook.png"), "https://www.facebook.com/pages/Jam-City-Live/1574478196119697", target: "_blank" %>
           <%= link_to image_tag("social/Twitter.png"), "https://twitter.com/JamCityLive", target: "_blank" %>
-          <%= link_to image_tag( "social/google_plus.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
           <%= link_to image_tag("social/YouTube.png"), "https://www.youtube.com/channel/UCNWYAh5RGEMEUWylkwS2bmQ", target: "_blank" %>
         </p>
         <div>
