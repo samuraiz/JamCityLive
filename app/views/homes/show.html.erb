@@ -58,18 +58,16 @@
       <h3>Latest News</h3>
       <% @posts.each do |post| %>
       <div class="news-item">
-
         <img class="img-responsive img-square col-lg-4 no-padding" src="<%= post.image.url %>" >
             <%#= image_tag post.image.url(:medium), class: "latest-news img-responsive img-square col-lg-4 no-padding", size: "300*200" %>
         <div class="col-lg-7">
           <h4 class="no-margin"><%= post.title %></h4>
           <p><%= post.content.truncate(200) %></p>
           <%=link_to "Read more", post %>
-          <br><br>
         </div>
-
       </div>
       <% end %>
+      <br><br>
       <!--<div class="news-item">-->
         <!--<img class="img-responsive img-square col-lg-4 no-padding" src="/assets/jam_city_aud.jpg" alt="" />-->
         <!--<div class="col-lg-7">-->
@@ -96,7 +94,7 @@
       <h4>Tales of Bollylomo</h4>
       <div class="video-container padding-gee">
 
-        <iframe width="auto" height="1200" src="https://www.youtube.com/embed/GXfL5T3yVXA?rel=0&amp;showinfo=0" controls="0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="auto" height="1200" src=<%= access %> controls="0" frameborder="0" allowfullscreen></iframe>
       </div>
         <!-- tweets -->
       <div class="twitter-container">

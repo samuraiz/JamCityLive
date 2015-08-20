@@ -7,6 +7,6 @@ class HomesController < ApplicationController
     @posts = Post.last(3).reverse
 
     #video
-    @tv = Tv.last(1)
+    @tv = Tv.last
   end
 end

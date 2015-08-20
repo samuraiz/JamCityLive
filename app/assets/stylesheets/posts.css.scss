@@ -19,6 +19,37 @@
   background-color: white;
 }
 
+//.my-row {
+//  display: flex;
+//
+//  & .news {
+//    flex: 2;
+//    display: flex;
+//    flex-direction: column;
+//
+//    & .news-item {
+//      // display: flex;
+//      margin-bottom: 20px;
+//
+//      & img {
+//        @include border_and_shadow;
+//        flex: 1;
+//        margin-bottom: 20px;
+//      }
+//
+//      & div {
+//        flex: 2;
+//      }
+//    }
+//  }
+//  .videos {
+//    display: flex;
+//    flex: 1;
+//    flex-direction: column;
+//  }
+//}
+
+
 //.post-title{
 //  font-family: "Arvo", Serif;
 ////  margin: 20px 0px 20px;
