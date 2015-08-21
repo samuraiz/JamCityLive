@@ -15,5 +15,6 @@ Rails.application.config.assets.precompile += %w( galleries.js )
 Rails.application.config.assets.precompile += %w( social-share-button.js )
 Rails.application.config.assets.precompile += %w(countdown.js )
 Rails.application.config.assets.precompile += %w(festival.js )
+Rails.application.config.assets.precompile += %w(core.js )
 # Rails.application.config.assets.precompile += %w( social-share-button.css.scss )
 

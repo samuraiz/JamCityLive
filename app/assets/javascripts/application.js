@@ -40,3 +40,5 @@ $(window).on('scroll', function() {
   // set class for navbar
   navbarAddClass();
 })();
+
+$('.datepicker').datepicker()

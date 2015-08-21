@@ -3,130 +3,159 @@
     <h1 id="timeline">Jam City Timeline</h1>
   </div>
   <ul class="col-sm-11 center timeline">
-    <li>
+    <% @galleries.each do |gallery| %>
+        <li class="<%= cycle('', 'timeline-inverted') %>">
       <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
+        <div class="">
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+          <%= image_tag gallery.photos.shuffle.take(1).first.image.url, class:"img-thumbnail img-responsive img-square", width: "150" %>
+        </div>
         <div class="timeline-heading">
-          <h4 class="timeline-title">Auditions</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> JUNE 2014</small></p>
+          <h4 class="timeline-title"><%= gallery.title %></h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <%= Date.strptime(gallery.date, '%m/%d/%Y')%></small></p>
         </div>
         <div class="timeline-body">
-          <p>Audutons for potential contestants.</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
+          <p><%= gallery.description %></p>
+          <%= link_to "Pictures", gallery, class: "btn btn-info btn-sm" %>
         </div>
       </div>
     </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge warning"><i class="glyphicon glyphicon-play-circle"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Rehearsals</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> JUNE 2014</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Rehearsal for upcoming Jam City event.</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Cypher Corner</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> AUGUST 2014</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Graffitis, basketball match, rap and dance.</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge info"><i class="glyphicon glyphicon-music"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Concert 1</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> OCT 2014</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Concert perfomances and highlights.</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-badge info"><i class="glyphicon glyphicon-music"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Concert 2</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> DEC 2015</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Jamming live with Eva.</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Cypher #Classic</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> DEC 2014</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Rap discovery, with the Tune Goon</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Cypher #RetroThursday</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> FEB 2015</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Some new cypher event held recently</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Cypher #theGame</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> APR 2015</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>LCU vs UI Footy, Rap, Dance and Comedy</p>
-          <a href="<%= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>
-          <a href="<%= tvs_path %>" class="btn btn-info btn-sm">Videos</a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4 class="timeline-title">Jam City Festival</h4>
-          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> AUG 2015</small></p>
-        </div>
-        <div class="timeline-body">
-          <p>Concert, camping events, exhibition. Coming soon...</p>
-          <a href="<%= festivals_path %>" class="btn btn-info btn-sm">Go</a>
-        </div>
-      </div>
-    </li>
+    <% end %>
+    <!--<li class="timeline-inverted">-->
+      <!--<div class="timeline-badge warning"><i class="glyphicon glyphicon-play-circle"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Rehearsals</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> JUNE 2014</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Rehearsal for upcoming Jam City event.</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li>-->
+      <!--<div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Cypher Corner</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> AUGUST 2014</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Graffitis, basketball match, rap and dance.</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li class="timeline-inverted">-->
+      <!--<div class="timeline-badge info"><i class="glyphicon glyphicon-music"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Concert 1</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> OCT 2014</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Concert perfomances and highlights.</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li>-->
+      <!--<div class="timeline-badge info"><i class="glyphicon glyphicon-music"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Concert 2</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> DEC 2015</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Jamming live with Eva.</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li class="timeline-inverted">-->
+      <!--<div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Cypher #Classic</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> DEC 2014</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Rap discovery, with the Tune Goon</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li class="timeline-inverted">-->
+      <!--<div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Cypher #RetroThursday</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> FEB 2015</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Some new cypher event held recently</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li class="timeline-inverted">-->
+      <!--<div class="timeline-badge success"><i class="glyphicon glyphicon-headphones"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Cypher #theGame</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> APR 2015</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>LCU vs UI Footy, Rap, Dance and Comedy</p>-->
+          <!--<a href="<%#= galleries_path %>" class="btn btn-info btn-sm">Pictures</a>-->
+          <!--<a href="<%#= tvs_path %>" class="btn btn-info btn-sm">Videos</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li>-->
+      <!--<div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>-->
+      <!--<div class="timeline-panel">-->
+        <!--<div class="">-->
+          <!--<img class="img-thumbnail img-responsive img-square" src="/assets/jamcityfest.jpg" width="150">-->
+        <!--</div>-->
+        <!--<div class="timeline-heading">-->
+          <!--<h4 class="timeline-title">Jam City Festival</h4>-->
+          <!--<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> AUG 2015</small></p>-->
+        <!--</div>-->
+        <!--<div class="timeline-body">-->
+          <!--<p>Concert, camping events, exhibition. Coming soon...</p>-->
+          <!--<a href="<%#= festivals_path %>" class="btn btn-info btn-sm">Go</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</li>-->
   </ul>
 <!-- footer -->
