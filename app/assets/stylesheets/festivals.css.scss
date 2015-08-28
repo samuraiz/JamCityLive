@@ -1,9 +1,9 @@
 div.cover-img{
-  height: 600px;
+  height: 700px;
 }
 
 div.cover-img{
-  background: url('bg1.jpg') no-repeat center center fixed;
+  background: url('notice.jpg-large') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -46,6 +46,14 @@ div.cover-img{
 }
 
 @media only screen and (max-width: 768px){
+
+  div.cover-img{
+    background: url('notice.jpg-large') no-repeat center center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
 
   .slider-img{
     height: 345px;
