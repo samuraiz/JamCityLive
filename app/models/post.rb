@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def slug
-    title.downcase.gsub(" ", "-")
+    title.downcase.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
 
   def to_param
