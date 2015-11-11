@@ -1,1 +1,0 @@
-var getCountDown=function(){var n=document.getElementById("countdown-holder"),t=new Date(2015,7,13);n.innerHTML=countdown(t).toString(),setInterval(function(){n.innerHTML=countdown(t).toString()},1e3)};$(document).ready(getCountDown),$(document).on("page:load",getCountDown);

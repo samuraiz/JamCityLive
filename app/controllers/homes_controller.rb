@@ -4,7 +4,7 @@ class HomesController < ApplicationController
     # @tvs = Tv.all
 
     #latest news
-    @posts = Post.last(3).reverse
+    @posts = Post.last(4).reverse
 
     #video
     @tv = Tv.last

@@ -1,6 +1,6 @@
 var getCountDown = function() {
     var clock = document.getElementById("countdown-holder")
-        , targetDate = new Date(2015, 10, 13); // Nov 13, 2015;
+        , targetDate = new Date(2015, 11, 13); // Nov 13, 2015;
 
     clock.innerHTML = countdown(targetDate).toString();
     setInterval(function(){

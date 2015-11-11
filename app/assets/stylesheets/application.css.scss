@@ -41,6 +41,7 @@ $dark_blue: #1F5F89;
 /* Import other stylesheets */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "compass";
 @import "contestants";
 @import "events";
 @import "fonts";
@@ -337,7 +338,7 @@ p .alert {
 }
 
 // Media Queries
-@media only screen and ( max-width: 768px) {
+@media only screen and ( max-width: 320px) {
 
 }
 
