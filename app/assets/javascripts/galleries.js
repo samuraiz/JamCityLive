@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var thumbnails = $(".img-responsive.img-square.col-lg-2.no-padding");
+    var thumbnails = $(".img-square.col-lg-2.no-padding");
     var aTags = $(".img-link");
 
     var imgListUL = $('.portfolio-list').empty();
