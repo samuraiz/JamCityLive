@@ -9,13 +9,14 @@
     <% @gallery.photos.each do |photo| %>
         <li>
           <a class="img-link" href="">
-            <img class="img-responsive img-square col-lg-2 no-padding" src="<%= photo.image.url %>" alt="" />
+            <img class="img-square col-lg-2 no-padding" src="<%= photo.image.url %>" alt="" />
           </a>
         </li>
         <% if current_user.try(:admin?) %>
-            <%= link_to 'Edit', edit_photo_path(photo) %>
-            <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_photo_path(photo), class: 'micro-screen' %>
+            <%= link_to 'Destroy', photo, class: 'micro-screen', method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+        <br class="small-screen"/>
     <% end %>
   </ul>
   Share via: <%= social_share_button_tag(@gallery.title, :url => request.original_url, :via => "JamCityLive") %>
