@@ -17,7 +17,6 @@ div.cover-img{
   text-align: center;
   margin: 150px auto 250px;
   color: #f5f5f5;
-//  z-index: 11;
 }
 
 .caption-bg{
@@ -136,6 +135,12 @@ div.cover-img{
 //    display: block;
 //  }
 //}
+
+
+table.events-table {
+  margin: 0 auto;
+  width: 50%;
+}
 
 @media only screen and (max-width: 420px){
 
