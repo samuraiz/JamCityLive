@@ -139,7 +139,14 @@ div.cover-img{
 
 table.events-table {
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
+  table-layout:fixed
+}
+
+table.events-table td {
+//  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 420px){
@@ -152,6 +159,9 @@ table.events-table {
 //    background-size: contain;
 //  }
 
+  #carousel-top {
+    margin-top: 129px;
+  }
   .slider-img{
     height: 400px;
   }
